@@ -1,2 +1,2 @@
 # PROG8420-PythonProject
-Real Estate Rental System
+Real Estate Rental System or Logistics system
