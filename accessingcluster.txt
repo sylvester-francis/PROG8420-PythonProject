@@ -1,0 +1,11 @@
+Steps to access atlas cluster:
+
+Open mongo compass:
+
+connection string :
+mongodb+srv://administrator:appsrdsf123@pythonproject.bafek.mongodb.net/test?authSource=admin&replicaSet=atlas-gl7qtv-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true
+
+username:administrator
+password:appsrdsf123
+
+
