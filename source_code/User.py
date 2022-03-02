@@ -9,12 +9,13 @@ Last Modified by  : Sylvester Francis
 Import statements
 """
 import database.connection as db
+from bson.objectid import ObjectId #Added for objectID type -> Mongo Specific type
 
 """
 Global Variables
 """
-c_name = "users"
-client = db.get_data
+c_name = "users" # c_name => Collection Name
+client = db.get_data()
 print(client)
 
 '''Signup function
