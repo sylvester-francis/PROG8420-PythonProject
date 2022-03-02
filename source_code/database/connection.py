@@ -18,7 +18,7 @@ def get_database():
     try:
         CONNECTION_STRING = "mongodb+srv://administrator:appsrdsf123@pythonproject.bafek.mongodb.net/rental_system?retryWrites=true&w=majority"
         client = MongoClient(CONNECTION_STRING)
-        print("\n Client {}".format(str(client)))
+        # print("\n Client {}".format(str(client)))
         database_obj =  client['rental_system']
         return database_obj
     except Exception as e:
@@ -103,6 +103,6 @@ def delete_one_record(c_name,query):
 
 
 
-if __name__ == "__main__":    
-    dbname = get_database()
-    print(dbname)
+# if __name__ == "__main__":    
+    # dbname = get_database()
+    # print(dbname)
