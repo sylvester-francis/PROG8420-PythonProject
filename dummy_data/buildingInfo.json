@@ -1,0 +1,241 @@
+[{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  },
+  "buildingName": "Marq",
+  "Address": "157 Esch Circle",
+  "City": "Cache Creek",
+  "postalCode": "N1G",
+  "province": "BC",
+  "unitType": "SingleRoom",
+  "isFurnished": true,
+  "isAvailable": false,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": false,
+  "petFriendly": true,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": true,
+  "noOfWashrooms": "2",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ab"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a6a"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a12"
+  },
+  "buildingName": "Domus",
+  "Address": "62284 Miller Drive",
+  "City": "Windsor",
+  "postalCode": "J1S",
+  "province": "ON",
+  "unitType": "TwoRoom",
+  "isFurnished": true,
+  "isAvailable": true,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": true,
+  "petFriendly": true,
+  "hasEnsuiteWashroom": false,
+  "hasEnsuiteLaundry": false,
+  "noOfWashrooms": "3",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ad"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a69"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a13"
+  },
+  "buildingName": "Domus",
+  "Address": "682 Hanover Park",
+  "City": "Dorchester",
+  "postalCode": "E4K",
+  "province": "ON",
+  "unitType": "FiveRooms",
+  "isFurnished": true,
+  "isAvailable": true,
+  "isParkingAvailable": false,
+  "storageAreaAvailable": false,
+  "petFriendly": true,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": false,
+  "noOfWashrooms": "2",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ae"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a68"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a14"
+  },
+  "buildingName": "Marq",
+  "Address": "8 Darwin Crossing",
+  "City": "Kimberley",
+  "postalCode": "V1A",
+  "province": "BC",
+  "unitType": "SingleRoom",
+  "isFurnished": true,
+  "isAvailable": true,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": false,
+  "petFriendly": true,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": false,
+  "noOfWashrooms": "5",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459af"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a67"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a15"
+  },
+  "buildingName": "RezOne",
+  "Address": "0945 Hansons Place",
+  "City": "Wingham",
+  "postalCode": "T5K",
+  "province": "ON",
+  "unitType": "FiveRooms",
+  "isFurnished": false,
+  "isAvailable": false,
+  "isParkingAvailable": false,
+  "storageAreaAvailable": false,
+  "petFriendly": false,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": false,
+  "noOfWashrooms": "2",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b0"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a66"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a16"
+  },
+  "buildingName": "RezOne",
+  "Address": "88434 Gateway Lane",
+  "City": "Hudson Bay",
+  "postalCode": "K2J",
+  "province": "SK",
+  "unitType": "TwoRoom",
+  "isFurnished": false,
+  "isAvailable": false,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": true,
+  "petFriendly": true,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": true,
+  "noOfWashrooms": "3",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b1"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a65"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a17"
+  },
+  "buildingName": "Domus",
+  "Address": "911 Prairie Rose Junction",
+  "City": "Port Moody",
+  "postalCode": "V3H",
+  "province": "BC",
+  "unitType": "SingleRoom",
+  "isFurnished": false,
+  "isAvailable": false,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": false,
+  "petFriendly": false,
+  "hasEnsuiteWashroom": false,
+  "hasEnsuiteLaundry": false,
+  "noOfWashrooms": "",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b2"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a64"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a18"
+  },
+  "buildingName": "Marq",
+  "Address": "6 Mayfield Crossing",
+  "City": "Kimberley",
+  "postalCode": "V1A",
+  "province": "BC",
+  "unitType": "SingleRoom",
+  "isFurnished": false,
+  "isAvailable": false,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": true,
+  "petFriendly": false,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": true,
+  "noOfWashrooms": "3",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b3"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a63"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a19"
+  },
+  "buildingName": "RezOne",
+  "Address": "64427 Mayfield Circle",
+  "City": "West Kelowna",
+  "postalCode": "V1Z",
+  "province": "BC",
+  "unitType": "SingleRoom",
+  "isFurnished": true,
+  "isAvailable": true,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": true,
+  "petFriendly": true,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": false,
+  "noOfWashrooms": "3",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b5"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a62"
+  }
+},{
+  "_id": {
+    "$oid": "621ef1e586ed827ec8845a1a"
+  },
+  "buildingName": "Domus",
+  "Address": "8 Eastlawn Alley",
+  "City": "Lacombe",
+  "postalCode": "T4L",
+  "province": "AB",
+  "unitType": "FiveRooms",
+  "isFurnished": true,
+  "isAvailable": false,
+  "isParkingAvailable": true,
+  "storageAreaAvailable": true,
+  "petFriendly": false,
+  "hasEnsuiteWashroom": true,
+  "hasEnsuiteLaundry": true,
+  "noOfWashrooms": "",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b8"
+  },
+  "rentId": {
+    "$oid": "621f008d86ed827ec8845a61"
+  }
+}]

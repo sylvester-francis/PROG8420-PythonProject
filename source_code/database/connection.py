@@ -59,7 +59,7 @@ def get_one_record(c_name,query):
 Purpose: The below function is used to get many records from  a specific collection
 Params : Collection name 
 '''
-def get_many_records(c_name)
+def get_many_records(c_name):
     try:
         data = c_name.find()
         return data
@@ -102,6 +102,6 @@ def delete_one_record(c_name,query):
 
 
 
-if __name__ == "__main__":    
-    dbname = get_database()
-    print(dbname.list_collection_names())
+# if __name__ == "__main__":    
+#     dbname = get_database()
+#     print(dbname.list_collection_names())

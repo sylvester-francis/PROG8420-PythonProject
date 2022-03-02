@@ -1,0 +1,281 @@
+[{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459ab"
+  },
+  "FirstName": "Gib",
+  "LastName": "Summerlee",
+  "email": "gsummerlee0@admin.ch",
+  "username": "gsummerlee0",
+  "password": "pNxAHw",
+  "userType": "Owner",
+  "phoneNumber": "853-201-5277",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459ac"
+  },
+  "FirstName": "Alia",
+  "LastName": "Stonary",
+  "email": "astonary1@com.com",
+  "username": "astonary1",
+  "password": "HfzWsAJ",
+  "userType": "Staff",
+  "phoneNumber": "766-981-7998",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459ad"
+  },
+  "FirstName": "Tammara",
+  "LastName": "Bartak",
+  "email": "tbartak2@twitpic.com",
+  "username": "tbartak2",
+  "password": "hLU3JCUkA5D",
+  "userType": "Staff",
+  "phoneNumber": "569-512-7169",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a12"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459ae"
+  },
+  "FirstName": "Wynnie",
+  "LastName": "McLagan",
+  "email": "wmclagan3@phoca.cz",
+  "username": "wmclagan3",
+  "password": "A9M4Mq",
+  "userType": "Tenant",
+  "phoneNumber": "995-593-1624",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a12"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459af"
+  },
+  "FirstName": "Sadie",
+  "LastName": "Livezey",
+  "email": "slivezey4@addtoany.com",
+  "username": "slivezey4",
+  "password": "7nWTj1M2",
+  "userType": "Staff",
+  "phoneNumber": "842-171-0199",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a12"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b0"
+  },
+  "FirstName": "Stephi",
+  "LastName": "Espinay",
+  "email": "sespinay5@last.fm",
+  "username": "sespinay5",
+  "password": "XRdH79U",
+  "userType": "Owner",
+  "phoneNumber": "882-409-4168",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a12"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b1"
+  },
+  "FirstName": "Tarrah",
+  "LastName": "McGavigan",
+  "email": "tmcgavigan6@cloudflare.com",
+  "username": "tmcgavigan6",
+  "password": "2RpYbC98z2",
+  "userType": "Staff",
+  "phoneNumber": "948-634-3342",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a13"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b2"
+  },
+  "FirstName": "Ancell",
+  "LastName": "Klewer",
+  "email": "aklewer7@over-blog.com",
+  "username": "aklewer7",
+  "password": "89qfwbeCvWn",
+  "userType": "Staff",
+  "phoneNumber": "434-973-7540",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a13"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b3"
+  },
+  "FirstName": "Dermot",
+  "LastName": "Betteney",
+  "email": "dbetteney8@europa.eu",
+  "username": "dbetteney8",
+  "password": "Q7WM9wd4DvX",
+  "userType": "Tenant",
+  "phoneNumber": "227-369-5128",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a13"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b4"
+  },
+  "FirstName": "Clemence",
+  "LastName": "Geater",
+  "email": "cgeater9@mashable.com",
+  "username": "cgeater9",
+  "password": "snkFSmn",
+  "userType": "Staff",
+  "phoneNumber": "601-951-7844",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a13"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b5"
+  },
+  "FirstName": "Farand",
+  "LastName": "Brettoner",
+  "email": "fbrettonera@weebly.com",
+  "username": "fbrettonera",
+  "password": "se0cixw",
+  "userType": "Owner",
+  "phoneNumber": "762-545-3826",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a13"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b6"
+  },
+  "FirstName": "Catrina",
+  "LastName": "Starmore",
+  "email": "cstarmoreb@berkeley.edu",
+  "username": "cstarmoreb",
+  "password": "wUGjZPrq",
+  "userType": "Owner",
+  "phoneNumber": "253-122-9786",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a14"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b7"
+  },
+  "FirstName": "Joshuah",
+  "LastName": "Normavell",
+  "email": "jnormavellc@cdc.gov",
+  "username": "jnormavellc",
+  "password": "dTK3OkU1L",
+  "userType": "Owner",
+  "phoneNumber": "525-987-0217",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a15"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b8"
+  },
+  "FirstName": "Missy",
+  "LastName": "Cardwell",
+  "email": "mcardwelld@wikia.com",
+  "username": "mcardwelld",
+  "password": "GO4tmT",
+  "userType": "Tenant",
+  "phoneNumber": "138-227-8361",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a15"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459b9"
+  },
+  "FirstName": "Novelia",
+  "LastName": "Mowbury",
+  "email": "nmowburye@webnode.com",
+  "username": "nmowburye",
+  "password": "JKLmhfTBF",
+  "userType": "Owner",
+  "phoneNumber": "745-479-5663",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a16"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459ba"
+  },
+  "FirstName": "Bret",
+  "LastName": "Kelle",
+  "email": "bkellef@shutterfly.com",
+  "username": "bkellef",
+  "password": "kMS9gjMX",
+  "userType": "Tenant",
+  "phoneNumber": "920-263-4790",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a16"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459bb"
+  },
+  "FirstName": "Erminia",
+  "LastName": "Loynes",
+  "email": "eloynesg@aboutads.info",
+  "username": "eloynesg",
+  "password": "hObwmlYP",
+  "userType": "Staff",
+  "phoneNumber": "612-922-0931",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a16"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459bc"
+  },
+  "FirstName": "Anett",
+  "LastName": "Henrionot",
+  "email": "ahenrionoth@msn.com",
+  "username": "ahenrionoth",
+  "password": "24gnL8r",
+  "userType": "Owner",
+  "phoneNumber": "485-549-1927",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a17"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459bd"
+  },
+  "FirstName": "Kimbell",
+  "LastName": "Hallas",
+  "email": "khallasi@oracle.com",
+  "username": "khallasi",
+  "password": "ALpjDtt4KlQx",
+  "userType": "Staff",
+  "phoneNumber": "886-369-9088",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a17"
+  }
+},{
+  "_id": {
+    "$oid": "621eee8586ed827ec88459be"
+  },
+  "FirstName": "Gilberto",
+  "LastName": "Djuricic",
+  "email": "gdjuricicj@ezinearticles.com",
+  "username": "gdjuricicj",
+  "password": "FH8uEV",
+  "userType": "Tenant",
+  "phoneNumber": "605-276-6094",
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a17"
+  }
+}]

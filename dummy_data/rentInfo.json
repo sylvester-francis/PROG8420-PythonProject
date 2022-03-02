@@ -1,0 +1,301 @@
+[{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a61"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  },
+  "rentalPeriod": "8 months",
+  "rentPaid": true,
+  "advancePaid": true,
+  "depositPaid": false,
+  "rentDueOn": "10/26/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ab"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a62"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  },
+  "rentalPeriod": "1 year",
+  "rentPaid": false,
+  "advancePaid": true,
+  "depositPaid": true,
+  "rentDueOn": "08/05/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ac"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a63"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a12"
+  },
+  "rentalPeriod": "8 months",
+  "rentPaid": false,
+  "advancePaid": false,
+  "depositPaid": false,
+  "rentDueOn": "02/16/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ad"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a64"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a13"
+  },
+  "rentalPeriod": "3 years",
+  "rentPaid": false,
+  "advancePaid": true,
+  "depositPaid": false,
+  "rentDueOn": "02/18/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ae"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a65"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a14"
+  },
+  "rentalPeriod": "3 years",
+  "rentPaid": false,
+  "advancePaid": false,
+  "depositPaid": true,
+  "rentDueOn": "10/11/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459af"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a66"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a15"
+  },
+  "rentalPeriod": "4 months",
+  "rentPaid": true,
+  "advancePaid": true,
+  "depositPaid": false,
+  "rentDueOn": "11/13/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b0"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a67"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a16"
+  },
+  "rentalPeriod": "3 years",
+  "rentPaid": true,
+  "advancePaid": true,
+  "depositPaid": false,
+  "rentDueOn": "07/02/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b1"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a68"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a17"
+  },
+  "rentalPeriod": "8 months",
+  "rentPaid": false,
+  "advancePaid": true,
+  "depositPaid": true,
+  "rentDueOn": "03/12/2020",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b2"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a69"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a17"
+  },
+  "rentalPeriod": "8 months",
+  "rentPaid": false,
+  "advancePaid": false,
+  "depositPaid": true,
+  "rentDueOn": "07/01/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b3"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a6a"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a17"
+  },
+  "rentalPeriod": "3 years",
+  "rentPaid": false,
+  "advancePaid": true,
+  "depositPaid": true,
+  "rentDueOn": "07/22/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b4"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a6b"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a18"
+  },
+  "rentalPeriod": "1 year",
+  "rentPaid": true,
+  "advancePaid": false,
+  "depositPaid": true,
+  "rentDueOn": "09/01/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b5"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a6c"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a19"
+  },
+  "rentalPeriod": "1 year",
+  "rentPaid": true,
+  "advancePaid": false,
+  "depositPaid": true,
+  "rentDueOn": "06/18/2020",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b7"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a6d"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1a"
+  },
+  "rentalPeriod": "3 years",
+  "rentPaid": false,
+  "advancePaid": true,
+  "depositPaid": true,
+  "rentDueOn": "03/01/2020",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b8"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a6e"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1b"
+  },
+  "rentalPeriod": "8 months",
+  "rentPaid": true,
+  "advancePaid": false,
+  "depositPaid": true,
+  "rentDueOn": "04/29/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459b9"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a6f"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1c"
+  },
+  "rentalPeriod": "1 year",
+  "rentPaid": false,
+  "advancePaid": true,
+  "depositPaid": false,
+  "rentDueOn": "04/11/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459ba"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a70"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1d"
+  },
+  "rentalPeriod": "4 months",
+  "rentPaid": true,
+  "advancePaid": true,
+  "depositPaid": true,
+  "rentDueOn": "06/22/2021",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459bb"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a71"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1e"
+  },
+  "rentalPeriod": "1 year",
+  "rentPaid": true,
+  "advancePaid": true,
+  "depositPaid": false,
+  "rentDueOn": "12/21/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459bc"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a72"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1e"
+  },
+  "rentalPeriod": "3 years",
+  "rentPaid": false,
+  "advancePaid": true,
+  "depositPaid": false,
+  "rentDueOn": "06/06/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459bd"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a73"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1e"
+  },
+  "rentalPeriod": "1 year",
+  "rentPaid": true,
+  "advancePaid": true,
+  "depositPaid": true,
+  "rentDueOn": "03/30/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459be"
+  }
+},{
+  "_id": {
+    "$oid": "621f008d86ed827ec8845a74"
+  },
+  "buildingId": {
+    "$oid": "621ef1e586ed827ec8845a1e"
+  },
+  "rentalPeriod": "8 months",
+  "rentPaid": true,
+  "advancePaid": false,
+  "depositPaid": true,
+  "rentDueOn": "05/01/2022",
+  "userId": {
+    "$oid": "621eee8586ed827ec88459be"
+  }
+}]

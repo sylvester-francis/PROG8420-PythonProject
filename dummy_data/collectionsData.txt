@@ -1,0 +1,48 @@
+Users Collection:
+
+{
+    _id: ObjectId()
+    FirstName: String,
+    LastName:String
+    email:String,
+    username:String,
+    password:String,
+    userType:Array -> ['owner','management','tenant']
+    phoneNumber:String,
+    buildingId:ObjectId()
+}
+
+
+
+buildings
+{
+  _id: ObjectId(),
+  buildingName:String,
+  userId: ObjectId(), // bad field :P
+  Address: String,
+  City: String,
+  postalCode:String,
+  province:String,
+  unitType:Array,
+  isFurnished:Boolean,
+  isAvailable:Boolean,
+  rentId: ObjectId()
+  isParkingAvailable: Boolean,
+  storageAreaAvailable:Boolean,
+  petFriendly:Boolean,
+  hasEnsuiteWashroom:Boolean,
+  noOfWashrooms:Int,
+  hasEnsuiteLaundry:Boolean
+}
+
+rentalInfo
+{
+  _id: ObjectId(),
+  buildingId: ObjectId(),
+  userId: ObjectId(),
+  rentalPeriod:String,
+  rentPaid:Boolean,
+  advancePaid:Boolean,
+  depositPaid:Boolean,
+  rentDueOn:Date
+}
