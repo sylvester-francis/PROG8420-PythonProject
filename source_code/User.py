@@ -10,6 +10,13 @@ Import statements
 """
 import database.connection as db
 
+"""
+Global Variables
+"""
+c_name = "users"
+client = db.get_data
+print(client)
+
 '''Signup function
 Purpose: The below function is used to create a user 
 Params : None
