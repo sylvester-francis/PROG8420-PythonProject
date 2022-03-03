@@ -23,7 +23,7 @@ def get_database():
         return database_obj
     except Exception as e:
         print("\n An exception occured in connecting to db")
-        return e.__name__
+        return e
 
 ''' Insert one record into collection 
 Purpose: The below function is used to insert a record into a specific collection
@@ -103,6 +103,6 @@ def delete_one_record(c_name,query):
 
 
 
-# if __name__ == "__main__":    
-    # dbname = get_database()
-    # print(dbname)
+if __name__ == "__main__":    
+    dbname = get_database()
+    print(dbname)
