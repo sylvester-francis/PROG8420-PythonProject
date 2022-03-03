@@ -18,21 +18,14 @@ buildings
 {
   _id: ObjectId(),
   buildingName:String,
-  userId: ObjectId(), // bad field :P
+  userId: ObjectId(),
   Address: String,
   City: String,
   postalCode:String,
   province:String,
-  unitType:Array,
-  isFurnished:Boolean,
-  isAvailable:Boolean,
-  rentId: ObjectId()
   isParkingAvailable: Boolean,
   storageAreaAvailable:Boolean,
-  petFriendly:Boolean,
-  hasEnsuiteWashroom:Boolean,
-  noOfWashrooms:Int,
-  hasEnsuiteLaundry:Boolean
+  petFriendly:Boolean
 }
 
 rentalInfo
@@ -45,4 +38,17 @@ rentalInfo
   advancePaid:Boolean,
   depositPaid:Boolean,
   rentDueOn:Date
+}
+
+apartments
+{
+ buildingId:ObjectId(),
+ isFurnished:Boolean,
+ isAvailable:Boolean,
+ unitType:Array,
+ rentId:ObjectId()
+ noOfWashrooms:Int,
+ userId:ObjectId()
+ hasEnsuiteWashroom:Boolean,
+ hasEnsuiteLaundry:Boolean
 }

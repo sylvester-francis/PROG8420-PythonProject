@@ -7,20 +7,13 @@
   "City": "Cache Creek",
   "postalCode": "N1G",
   "province": "BC",
-  "unitType": "SingleRoom",
   "isFurnished": true,
-  "isAvailable": false,
   "isParkingAvailable": true,
   "storageAreaAvailable": false,
   "petFriendly": true,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": true,
   "noOfWashrooms": "2",
   "userId": {
     "$oid": "621eee8586ed827ec88459ab"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a6a"
   }
 },{
   "_id": {
@@ -31,20 +24,13 @@
   "City": "Windsor",
   "postalCode": "J1S",
   "province": "ON",
-  "unitType": "TwoRoom",
   "isFurnished": true,
-  "isAvailable": true,
   "isParkingAvailable": true,
   "storageAreaAvailable": true,
   "petFriendly": true,
-  "hasEnsuiteWashroom": false,
-  "hasEnsuiteLaundry": false,
   "noOfWashrooms": "3",
   "userId": {
     "$oid": "621eee8586ed827ec88459ad"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a69"
   }
 },{
   "_id": {
@@ -55,20 +41,13 @@
   "City": "Dorchester",
   "postalCode": "E4K",
   "province": "ON",
-  "unitType": "FiveRooms",
   "isFurnished": true,
-  "isAvailable": true,
   "isParkingAvailable": false,
   "storageAreaAvailable": false,
   "petFriendly": true,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": false,
   "noOfWashrooms": "2",
   "userId": {
     "$oid": "621eee8586ed827ec88459ae"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a68"
   }
 },{
   "_id": {
@@ -79,20 +58,13 @@
   "City": "Kimberley",
   "postalCode": "V1A",
   "province": "BC",
-  "unitType": "SingleRoom",
   "isFurnished": true,
-  "isAvailable": true,
   "isParkingAvailable": true,
   "storageAreaAvailable": false,
   "petFriendly": true,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": false,
   "noOfWashrooms": "5",
   "userId": {
     "$oid": "621eee8586ed827ec88459af"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a67"
   }
 },{
   "_id": {
@@ -103,20 +75,13 @@
   "City": "Wingham",
   "postalCode": "T5K",
   "province": "ON",
-  "unitType": "FiveRooms",
   "isFurnished": false,
-  "isAvailable": false,
   "isParkingAvailable": false,
   "storageAreaAvailable": false,
   "petFriendly": false,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": false,
   "noOfWashrooms": "2",
   "userId": {
     "$oid": "621eee8586ed827ec88459b0"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a66"
   }
 },{
   "_id": {
@@ -127,20 +92,13 @@
   "City": "Hudson Bay",
   "postalCode": "K2J",
   "province": "SK",
-  "unitType": "TwoRoom",
   "isFurnished": false,
-  "isAvailable": false,
   "isParkingAvailable": true,
   "storageAreaAvailable": true,
   "petFriendly": true,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": true,
   "noOfWashrooms": "3",
   "userId": {
     "$oid": "621eee8586ed827ec88459b1"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a65"
   }
 },{
   "_id": {
@@ -151,20 +109,13 @@
   "City": "Port Moody",
   "postalCode": "V3H",
   "province": "BC",
-  "unitType": "SingleRoom",
   "isFurnished": false,
-  "isAvailable": false,
   "isParkingAvailable": true,
   "storageAreaAvailable": false,
   "petFriendly": false,
-  "hasEnsuiteWashroom": false,
-  "hasEnsuiteLaundry": false,
   "noOfWashrooms": "",
   "userId": {
     "$oid": "621eee8586ed827ec88459b2"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a64"
   }
 },{
   "_id": {
@@ -175,20 +126,13 @@
   "City": "Kimberley",
   "postalCode": "V1A",
   "province": "BC",
-  "unitType": "SingleRoom",
   "isFurnished": false,
-  "isAvailable": false,
   "isParkingAvailable": true,
   "storageAreaAvailable": true,
   "petFriendly": false,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": true,
   "noOfWashrooms": "3",
   "userId": {
     "$oid": "621eee8586ed827ec88459b3"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a63"
   }
 },{
   "_id": {
@@ -199,20 +143,13 @@
   "City": "West Kelowna",
   "postalCode": "V1Z",
   "province": "BC",
-  "unitType": "SingleRoom",
   "isFurnished": true,
-  "isAvailable": true,
   "isParkingAvailable": true,
   "storageAreaAvailable": true,
   "petFriendly": true,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": false,
   "noOfWashrooms": "3",
   "userId": {
     "$oid": "621eee8586ed827ec88459b5"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a62"
   }
 },{
   "_id": {
@@ -223,19 +160,12 @@
   "City": "Lacombe",
   "postalCode": "T4L",
   "province": "AB",
-  "unitType": "FiveRooms",
   "isFurnished": true,
-  "isAvailable": false,
   "isParkingAvailable": true,
   "storageAreaAvailable": true,
   "petFriendly": false,
-  "hasEnsuiteWashroom": true,
-  "hasEnsuiteLaundry": true,
   "noOfWashrooms": "",
   "userId": {
     "$oid": "621eee8586ed827ec88459b8"
-  },
-  "rentId": {
-    "$oid": "621f008d86ed827ec8845a61"
   }
 }]
