@@ -1,4 +1,10 @@
-
+"""
+Code created by Rachel Denzil
+Student ID : 8806655
+Created date : 03 March 2022
+Last Modified date : 03 March 2022
+Last Modified by  : Rachel Denzil
+"""
 import database.connection as db
 from bson.objectid import ObjectId
 
@@ -29,6 +35,7 @@ def get_multiple_buildingInfo():
         building_list.append(i)
     return building_list
 
+#Delete,update,save - Building info  - #TODO
 
 if __name__ == "__main__":  
 
