@@ -25,6 +25,8 @@ Purpose: The below function is used to create a user
 Params : None
 Return value : None
 '''
+
+#An example of create function
 def signup():
     try: 
         data = {
