@@ -11,15 +11,20 @@ from bson.objectid import ObjectId
 
 client = db.get_database()
 c_name = client["buildings"] #c_name => Collection Name
+c_user = client["users"]
 building_list = []
 query = {}
 
 def get_apartment_info():
     try:
+        userquery = {}
+        userquery['LastName'] = "Summerlee"
+        userdata = db.get_one_record(c_user,userquery)
         global query
-        building = "Marq"
-        query['isFurnished'] = True
-        query['buildingName'] = building
+        query['userId'] = ObjectId(userdata['_id'])
+        # building = "Marq"
+        # query['isFurnished'] = True
+        # query['buildingName'] = building
         apartment = db.get_one_record(c_name,query)
         query = {}
         return apartment
