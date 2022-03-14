@@ -17,10 +17,9 @@ query = {}
 def get_apartment_info():
     try:
         global query
-        #building = "Marq"
-        isFurnished = true
-        query['isFurnished'] = true
-        #query['buildingName'] = building
+        building = "Marq"
+        query['isFurnished'] = True
+        query['buildingName'] = building
         apartment = db.get_one_record(c_name,query)
         query = {}
         return apartment
@@ -39,10 +38,10 @@ def get_multiple_buildingInfo():
 
 if __name__ == "__main__":  
 
-    #try:
-        #data = get_apartment_info()
-        #print(data)
-    data = get_multiple_buildingInfo()
-    print(data)
-    #except Exception as e:
-        #print(e.__name__)
+    try:
+        data = get_apartment_info()
+        print(data)
+    # data = get_multiple_buildingInfo()
+    # print(data)
+    except Exception as e:
+        print(e)
