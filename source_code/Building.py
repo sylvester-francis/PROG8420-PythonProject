@@ -1,0 +1,41 @@
+
+import database.connection as db
+from bson.objectid import ObjectId
+
+
+client = db.get_database()
+c_name = client["buildings"] #c_name => Collection Name
+building_list = []
+query = {}
+
+def get_apartment_info():
+    try:
+        global query
+        #building = "Marq"
+        isFurnished = true
+        query['isFurnished'] = true
+        #query['buildingName'] = building
+        apartment = db.get_one_record(c_name,query)
+        query = {}
+        return apartment
+    except Exception as e:
+        print("\n Building info not found in collection {}, exception {}".format(c_name,e.__name__))
+
+
+def get_multiple_buildingInfo():
+    global building_list
+    buildings = db.get_many_records(c_name)
+    for i in buildings:
+        building_list.append(i)
+    return building_list
+
+
+if __name__ == "__main__":  
+
+    #try:
+        #data = get_apartment_info()
+        #print(data)
+    data = get_multiple_buildingInfo()
+    print(data)
+    #except Exception as e:
+        #print(e.__name__)
