@@ -58,9 +58,9 @@ def get_one_record(c_name,query):
 Purpose: The below function is used to get many records from  a specific collection
 Params : Collection name 
 '''
-def get_many_records(c_name):
+def get_many_records(c_name,query={}):
     try:
-        data = c_name.find()
+        data = c_name.find(query)
         return data
     except Exception as e:
         print("\n Could not find any record in collection {}".format(c_name))

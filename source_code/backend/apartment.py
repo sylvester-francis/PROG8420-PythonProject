@@ -21,6 +21,7 @@ Return value : apartment information
 '''
 def get_apartment_info(query):
     try:
+        query['buildingId'] = '621ef1e586ed827ec8845a16'
         apartment = db.get_one_record(c_name,query)
         return apartment
     except Exception as e:
@@ -31,12 +32,14 @@ Purpose: The below function is used to return multiple apartment data
 Params : None
 Return value : apartment_list -> List of all the apartments present in the collection
 '''
-def get_multiple_apartmentInfo():
+def get_multiple_apartmentInfo(query = {}):
     global apartment_list
-    apartments = db.get_many_records(c_name)
+    apartments = db.get_many_records(c_name,query)
     for i in apartments:
         apartment_list.append(i)
     return apartment_list
+
+
 
 
 '''Create apartment information
@@ -83,3 +86,8 @@ def delete_apartmentInfo(query):
         print("\n Error deleting the Apartment info due to exception {} ".format(e.__name__))
         return None
 
+# if __name__ == '__main__':
+#     print(get_multiple_apartmentInfo())
+#     # q = {}
+#     # q['buildingId'] = ObjectId("621ef1e586ed827ec8845a11")
+#     # print(get_multiple_apartmentInfo(q))

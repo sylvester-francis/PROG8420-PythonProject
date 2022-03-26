@@ -9,8 +9,10 @@ import sys
 sys.path.append("..")
 import backend.User as user
 import backend.Building as building
+import backend.apartment as apartment
 from getpass import getpass
 from helper import clear
+from bson.objectid import ObjectId
 userTypes = {1:'Tenant',2:'Owner',3:'Staff'}
 
 ''' Login helper
@@ -67,11 +69,35 @@ def signup_helper():
         print("\n Furnished :{0}, \n Parking : {1}, \n Pet-Friendly: {2}, \n Storage: {3}".format(item['isFurnished'],item['isParkingAvailable'],item['petFriendly'],item['storageAreaAvailable']))
         building_list[index+1] = item['_id']
     print("\n ********************************************************************************** \n")
-    select_building = int(input("\n Enter the building that you are interested in: "))
-    if select_building in building_list.keys():
-        print(building_list[select_building])
-    else:
-        print("Building not found")
+    noOftries = 0
+    remainingTries = 2
+    while(noOftries < 3):
+        select_building = int(input("\n Enter the building that you are interested in: "))
+        if select_building in building_list.keys():
+            q = {}
+            q['buildingId'] = ObjectId(building_list[select_building])
+            q['isAvailable'] = True
+            apartmentlist = apartment.get_multiple_apartmentInfo(q)
+            if len(apartmentlist) > 0:
+                noOftries = 3
+            else:
+                print("\n Sorry,No apartments available in this building,try again")
+                print("\n No of tries remaining {0}".format(remainingTries))
+                noOftries += 1
+                remainingTries -= 1
+                continue
+        else:
+            if noOftries == 2:
+                print("\n Building not found")
+            else:
+                print("\n Building not found,try again")
+                print("\n No of tries remaining {0}".format(remainingTries))    
+            noOftries += 1
+            remainingTries -= 1
+    # for item in apartmentlist:
+
+    
+
     
 
 
