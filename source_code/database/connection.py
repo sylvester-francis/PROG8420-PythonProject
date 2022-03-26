@@ -11,8 +11,6 @@ Import statements
 import pymongo
 from pymongo import MongoClient
 from bson.objectid import ObjectId
-
-
 def get_database():
     # Provide the mongodb atlas url to connect python to mongodb using pymongo
     try:
