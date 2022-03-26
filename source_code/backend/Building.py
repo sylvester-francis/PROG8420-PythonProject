@@ -10,10 +10,9 @@ sys.path.append("..")
 import database.connection as db
 from bson.objectid import ObjectId
 client = db.get_database()
-c_name = client["buildings"] #c_name => Collection Name
+c_name = client["buildings"] 
 c_user = client["users"]
 building_list = []
-query = {}
 
 '''Get one building information
 Purpose: The below function is used to return a single building data 
@@ -22,17 +21,10 @@ Return value : None
 '''
 def get_apartment_info():
     try:
-        userquery = {}
-        userquery['LastName'] = "Summerlee"
         userdata = db.get_one_record(c_user,userquery)
-        global query
         query['userId'] = ObjectId(userdata['_id'])
-        # building = "Marq"
-        # query['isFurnished'] = True
-        # query['buildingName'] = building
-        apartment = db.get_one_record(c_name,query)
-        query = {}
-        return apartment
+        building = db.get_one_record(c_name,query)
+        return building
     except Exception as e:
         print("\n Building info not found in collection {}, exception {}".format(c_name,e.__name__))
 
@@ -53,21 +45,8 @@ Purpose: The below function is used to create building information
 Params : None
 Return value : Boolean
 '''
-def create_buildingInfo():
+def create_buildingInfo(data):
     try:
-        data = {
-        "buildingName":"BlueTwo",
-        "Address":"665544 Scott Lane",
-        "City":"Bowmanville",
-        "postalCode":"L1K",
-        "province":"ON",
-        "isFurnished":False,
-        "isParkingAvailable":True,
-        "storageAreaAvailable":True,
-        "petFriendly":True,
-        "noOfWashrooms":"2",
-        "userId": ObjectId("621ef1e586ed827ec8845a12")
-        }
         data_inserted = db.insert_into_collection(c_name,data)
         print(data_inserted)
         return data_inserted
@@ -80,23 +59,8 @@ Purpose: The below function is used to update building data
 Params : None
 Return value : Boolean
 '''
-def update_buildingInfo():
+def update_buildingInfo(query,data):
     try:
-        global query
-        data = {
-        "buildingName":"BlueTwo",
-        "Address":"665544 Scott Lane",
-        "City":"Whitby",  #update city
-        "postalCode":"L1K",
-        "province":"ON",
-        "isFurnished":False,
-        "isParkingAvailable":True,
-        "storageAreaAvailable":True,
-        "petFriendly":True,
-        "noOfWashrooms":"2",
-        "userId": ObjectId("621ef1e586ed827ec8845a12")
-        }
-        query["userId"] = ObjectId("621ef1e586ed827ec8845a12")
         data_updated = db.update_one_record(c_name,data,query)
         print(data_updated)
         query = {}
@@ -111,10 +75,8 @@ Purpose: The below function is used to delete building data
 Params : None
 Return value : Boolean
 '''
-def delete_buildingInfo():
+def delete_buildingInfo(query):
     try:
-        global query
-        query["userId"] = ObjectId("621ef1e586ed827ec8845a12")
         data_deleted = db.delete_one_record(c_name,query)
         print(data_deleted)
         return data_deleted
@@ -122,19 +84,3 @@ def delete_buildingInfo():
         print("\n Error deleting the rent info due to exception {} ".format(e.__name__))
         return None
 
-
-if __name__ == "__main__":  
-
-    try:
-        # data = get_apartment_info()
-        # print(data)
-        # data = get_multiple_buildingInfo()
-        # print(data)
-        # data = create_buildingInfo()
-        # print(data)
-        # data = update_buildingInfo()
-        # print(data)
-        # data = delete_buildingInfo()
-        # print(data)
-    except Exception as e:
-        print(e)
