@@ -8,6 +8,7 @@ Last Modified by  : Sylvester Francis
 import sys
 sys.path.append("..")
 import backend.User as user
+from helper import clear
 
 ''' Login helper
 Purpose: The below function is used as a helper function for login 
@@ -15,9 +16,12 @@ Params : None
 Return value : None
 '''
 def login_helper():
-
+    clear()
     print("\n ********************************************************************************** \n")
     print(" \n Login")
     print("\n ********************************************************************************** \n")
 def signup_helper():
-    print("\n Signup helper called")
+    clear()
+    print("\n ********************************************************************************** \n")
+    print(" \n Signup")
+    print("\n ********************************************************************************** \n")
