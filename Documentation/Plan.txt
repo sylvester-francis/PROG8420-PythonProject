@@ -1,0 +1,29 @@
+4  collections - CRUD operations - RentalInfo,BuildingInfo,User,Apartment
+
+Client -> 1.Login ->Type of User -> Owner -> owner_related functions
+                                 -> Tenant -> tenant_related functions
+                                 -> Employee -> Employee_related functions
+          2.Signup -> UserRegisteration -> Acc created successfully
+
+  Owner
+ 1. Check_information -> building
+ 2. Generate_report -> noofoccupiedpeople | Frequencyofpeoplepayingrent | whose lease is expiring
+ 3. Checkinformation - about employees in building
+ 4. DisplayRentinfo 
+ 5. DisplayApartmentInformation
+ 6. Logout
+
+  Tenant
+ 1. Checkinformation -> paid rent,expiry of lease
+ 2. Checkinformation- related to building staff
+ 3. Requestforsubleasing
+ 4. Requestforservice
+ 5.Logout
+Employee
+  1.Checkforrequestforsubleasing
+  2.CheckforserviceRequest
+  3.checkAppartmentInformation
+
+Subleasing request -> userid,appartmentid,buildingid,RequestedSublet:Boolean
+Service request -> userid,appartmentid,buildingid, requiresService:boolean
+        
