@@ -8,6 +8,7 @@ Last Modified by  : Sylvester Francis
 import sys
 sys.path.append("..")
 import backend.User as user
+from getpass import getpass
 from helper import clear
 
 ''' Login helper
@@ -20,6 +21,9 @@ def login_helper():
     print("\n ********************************************************************************** \n")
     print(" \n Login")
     print("\n ********************************************************************************** \n")
+    username = input("\n Enter your username: ")
+    password = getpass("\n Enter the password: ")
+    print(username,password)
 def signup_helper():
     clear()
     print("\n ********************************************************************************** \n")
