@@ -8,6 +8,8 @@ Last Modified by  : Parvathy Suresh
 """
 Import statements
 """
+import sys
+sys.path.append("..")
 import database.connection as db
 from bson.objectid import ObjectId #Added for objectID type -> Mongo Specific type
 from getpass import getpass #Added for password hiding
@@ -118,10 +120,10 @@ def delete_rentInfo():
 
 if __name__ == "__main__":  
     try:
-        data = createRentalInfo()
-        print(data)
-        # data = get_one_rentalInfo()
+        # data = createRentalInfo()
         # print(data)
+        data = get_one_rentalInfo()
+        print(data)
         # data = get_multiple_rentalInfos()
         # print(data)
         # data = update_rentalInfo()

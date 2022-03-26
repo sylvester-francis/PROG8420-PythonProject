@@ -8,6 +8,8 @@ Last Modified by  : Sylvester Francis
 """
 Import statements
 """
+import sys
+sys.path.append("..")
 import database.connection as db
 from bson.objectid import ObjectId #Added for objectID type -> Mongo Specific type
 from getpass import getpass #Added for password hiding
@@ -143,8 +145,8 @@ def delete_user():
 
 if __name__ == "__main__":  
     try:
-        # data = get_one_user()
-        # print(data)
+        data = get_one_user()
+        print(data)
         # data = login()
         # if data != None:
             # print(data)

@@ -5,10 +5,10 @@ Created date : 03 March 2022
 Last Modified date : 15 March 2022
 Last Modified by  : Rachel Denzil
 """
+import sys
+sys.path.append("..")
 import database.connection as db
 from bson.objectid import ObjectId
-
-
 client = db.get_database()
 c_name = client["buildings"] #c_name => Collection Name
 c_user = client["users"]
