@@ -16,13 +16,11 @@ building_list = []
 
 '''Get one building information
 Purpose: The below function is used to return a single building data 
-Params : None
-Return value : None
+Params : query
+Return value : buildinginfo
 '''
-def get_apartment_info():
+def get_building_info(query):
     try:
-        userdata = db.get_one_record(c_user,userquery)
-        query['userId'] = ObjectId(userdata['_id'])
         building = db.get_one_record(c_name,query)
         return building
     except Exception as e:
