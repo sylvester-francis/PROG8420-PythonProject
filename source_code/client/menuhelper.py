@@ -5,6 +5,7 @@ Created date : 26 March 2022
 Last Modified date : 27 February 2022
 Last Modified by  : Parvathy Suresh
 """
+import re
 import sys
 sys.path.append("..")
 import backend.User as user
@@ -53,7 +54,10 @@ def signup_helper():
     clear()
     data = {}
     errorEmail = True
+    errorUserName = True
+    errorPhone = True
     emailRegex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    phoneRegex = r"^(\([0-9]{3}\) ?|[0-9]{3}-)[0-9]{3}-[0-9]{4}$"
     print("\n ********************************************************************************** \n")
     print(" \n Signup")
     print("\n ********************************************************************************** \n")
@@ -63,19 +67,40 @@ def signup_helper():
         try:
             email     = input("\nEnter your Email ID:  ")
             if not (re.fullmatch(emailRegex, email)):
-                raise KeyError("Please enter valid email address")
+                raise KeyError("Please enter valid email address in format abc@abc.com")
         except KeyError as ke:
             print("\n{0}".format(ke))
             continue  
-        errorEmail = False 
-    username  = input("\nEnter your preferred username: ")
+        errorEmail = False
+    while errorUserName:
+        query = {}
+        try:
+            username  = input("\nEnter your preferred username: ")
+            user_data = None
+            query['username'] = username
+            #user_data = user.get_one_user(query)
+            print(user_data)
+            if user_data != None:
+                raise KeyError("Sorry,Entered UserName is already available, Please choose another username!!!")
+        except KeyError as ke:
+            print("\n{0}".format(ke))
+            continue  
+        errorUserName = False
     password  = getpass("\nEnter your password: ") 
     confirmpassword = getpass("\nRe-enter the password: ")
     if password == confirmpassword:
         password = encryptPassword(password)
     else:
         print("\n Password doesnot match")
-    phno = input("\n Enter your phone number: ")
+    while errorPhone:
+        try:
+            phno = input("\n Enter your phone number: ")
+            if not (re.fullmatch(phoneRegex, phno)):
+                raise KeyError("Please enter phone number in format xxx-xxx-xxxx")
+        except KeyError as ke:
+            print("\n{0}".format(ke))
+            continue  
+        errorPhone = False
     select_userType = input("\n Please select the type of user: \n1.Tenant \n2.Owner \n3.Staff \n Please type one of the following options(1,2 or 3)")
     userType =''
     if select_userType == '1':
