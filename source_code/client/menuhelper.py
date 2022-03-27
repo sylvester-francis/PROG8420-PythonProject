@@ -2,8 +2,8 @@
 Code created by Sylvester Francis
 Student ID : 8735728
 Created date : 26 March 2022
-Last Modified date : 26 February 2022
-Last Modified by  : Sylvester Francis
+Last Modified date : 27 February 2022
+Last Modified by  : Parvathy Suresh
 """
 import sys
 sys.path.append("..")
@@ -52,12 +52,22 @@ Return value : issignedup -> Boolean
 def signup_helper():
     clear()
     data = {}
+    errorEmail = True
+    emailRegex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
     print("\n ********************************************************************************** \n")
     print(" \n Signup")
     print("\n ********************************************************************************** \n")
     firstname = input("\nEnter your First Name: ")
     lastname  = input("\nEnter your Last Name:  ")
-    email     = input("\nEnter your Email ID:  ") 
+    while errorEmail:
+        try:
+            email     = input("\nEnter your Email ID:  ")
+            if not (re.fullmatch(emailRegex, email)):
+                raise KeyError("Please enter valid email address")
+        except KeyError as ke:
+            print("\n{0}".format(ke))
+            continue  
+        errorEmail = False 
     username  = input("\nEnter your preferred username: ")
     password  = getpass("\nEnter your password: ") 
     confirmpassword = getpass("\nRe-enter the password: ")
