@@ -186,7 +186,38 @@ def staff_path(data,typeAction):
     
 
 def tenant_menu():
-    pass
+    clear()
+    menu_selection = True
+    print("\n ********************************************************************************** \n")
+    print("\n 1. View profile ")
+    print("\n 2. View apartment detail ")
+    print("\n 3. Raise service request ")
+    print("\n 4. Raise sublet request")
+    print("\n 5. Pay rent")
+    print(" \n Please choose one of the following options to continue")
+    while menu_selection:
+        try:
+            selection = input("\n Enter your choice:")
+            if selection == '1':
+                viewProfile()
+            elif selection == '2':
+                viewapartment()
+            elif selection == '3':
+                raise_service_req()
+            elif selection == '4':
+                raise_sublet_req()
+            elif selection == '5':
+                pay_rent()
+            else:
+                raise KeyError('\n Invalid option, try again')
+        except KeyError as ke:
+            print('\n{0}'.format(ke))
+            continue
+        menu_selection = False
+        
+        
+
+    
 def owner_menu():
     pass
 def staff_menu():
