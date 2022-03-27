@@ -27,7 +27,11 @@ def menu():
     if choice == '1':
         login_helper()
     elif choice == '2':
-        signup_helper()
+        signedup = signup_helper()
+        if signedup:
+            pass
+        else:
+            print("\n Error in signing up, please try again")
     elif choice == '3':
         exit_application()
     else:

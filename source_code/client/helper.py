@@ -7,6 +7,9 @@ Last Modified by  : Sylvester Francis
 """
 
 from os import system, name
+from cryptography.fernet import Fernet
+key = b'stVG3hXK3GXlz-mgzzru-BmcMcNyH27TtO4HryqWC-M='
+fernet = Fernet(key)
 
 def clear():
     # for windows
@@ -15,4 +18,14 @@ def clear():
     # for mac and linux(here, os.name is 'posix')
     else:
         _ = system('clear')
+
+
+def encryptPassword(password):
+    encMessage = fernet.encrypt(password.encode())
+    return encMessage
+def decryptPassword(password):
+    decMessage = fernet.decrypt(password).decode()
+    return decMessage
+
+    
   

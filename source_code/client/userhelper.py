@@ -11,7 +11,7 @@ import backend.User as user
 import backend.Building as building
 import backend.apartment as apartment
 from getpass import getpass
-from helper import clear
+from helper import clear,encryptPassword,decryptPassword
 from bson.objectid import ObjectId
 userTypes = {1:'Tenant',2:'Owner',3:'Staff'}
 
@@ -35,23 +35,23 @@ def signup_helper():
     print("\n ********************************************************************************** \n")
     print(" \n Signup")
     print("\n ********************************************************************************** \n")
-    # firstname = input("\nEnter your First Name: ")
-    # lastname  = input("\nEnter your Last Name:  ")
-    # email     = input("\n Enter your Email ID:  ") 
-    # username  = input("\n Enter your preferred username: ")
-    # password  = getpass("\n Enter your password: ") 
-    # confirmpassword = getpass("\n Re-enter the password: ")
-    # if password == confirmpassword:
-    #     print("\n Password matches")
-    # else:
-    #     print("\n Password doesnot match")
-    # phno = input("\n Enter your phone number: ")
+    firstname = input("\nEnter your First Name: ")
+    lastname  = input("\nEnter your Last Name:  ")
+    email     = input("\n Enter your Email ID:  ") 
+    username  = input("\n Enter your preferred username: ")
+    password  = getpass("\n Enter your password: ") 
+    confirmpassword = getpass("\n Re-enter the password: ")
+    if password == confirmpassword:
+        password = encryptPassword(password)
+    else:
+        print("\n Password doesnot match")
+    phno = input("\n Enter your phone number: ")
     select_userType = input("\n Please select the type of user: \n1.Tenant \n2.Owner \n3.Staff \n Please type one of the following options(1,2 or 3)")
     userType =''
     if select_userType == '1':
         userType = userTypes[1]
-        # data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
-        tenant_path(data)
+        data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
+        issignedUp = tenant_path(data)
     elif select_userType == '2':
         userType= userTypes[2]
         owner_path()
@@ -60,9 +60,11 @@ def signup_helper():
         staff_path()
     else:
         print("\n Invalid option")
+    return issignedUp
     
 
 def tenant_path(data):
+    signedup = False
     errorApartment = True
     errorBuilding = True
     clear()
@@ -96,6 +98,7 @@ def tenant_path(data):
             continue  
         errorBuilding = False      
     apartmentid = {}
+    clear()
     print("\n ********************************************************************************** \n")
     for index,item in enumerate(apartmentlist):
         print("\n ****************************** Facilities of Apartment - {0} ********************************************* \n".format(index+1))
@@ -112,8 +115,17 @@ def tenant_path(data):
             print("\n {0}".format(e))
             continue
         errorApartment = False
-
-
+    data['buildingId'] = building_list[select_building]
+    data['apartmentId'] = apartmentid[select_apartment]
+    user_obj = user.signup(data)
+    if user_obj != None:
+        print("\n User signed up successfully")
+        signedup = True
+        return signedup
+    else:
+        print("\n Error in signing up User, please try again")
+        return signedup
+    
 
 
 def owner_path():
