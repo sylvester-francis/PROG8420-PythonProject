@@ -10,6 +10,7 @@ sys.path.append("..")
 import backend.User as user
 import backend.Building as building
 import backend.apartment as apartment
+from  menuactions import *
 from getpass import getpass
 from helper import clear,encryptPassword,decryptPassword
 from bson.objectid import ObjectId
@@ -214,14 +215,61 @@ def tenant_menu():
             print('\n{0}'.format(ke))
             continue
         menu_selection = False
-        
-        
-
     
 def owner_menu():
-    pass
+    clear()
+    menu_selection = True
+    print("\n ********************************************************************************** \n")
+    print("\n 1. Check building information ")
+    print("\n 2. Generate reports ")
+    print("\n 3. Check employee information ")
+    print("\n 4. Display rent info")
+    print("\n 5. Display Apartment Information")
+    print(" \n Please choose one of the following options to continue")
+    while menu_selection:
+        try:
+            selection = input("\n Enter your choice:")
+            if selection == '1':
+                BuildingInfo()
+            elif selection == '2':
+                GenReport()
+            elif selection == '3':
+                CheckEmpInfo()
+            elif selection == '4':
+                DisplayRentInfo()
+            elif selection == '5':
+                DisplayApartmentInformation()
+            else:
+                raise KeyError('\n Invalid option, try again')
+        except KeyError as ke:
+            print('\n{0}'.format(ke))
+            continue
+        menu_selection = False
+
+
 def staff_menu():
-    pass
+    clear()
+    menu_selection = True
+    print("\n ********************************************************************************** \n")
+    print("\n 1. Check for sublease requests ")
+    print("\n 2. Check for service requests ")
+    print("\n 3. Display Apartment information ")
+    print(" \n Please choose one of the following options to continue")
+    while menu_selection:
+        try:
+            selection = input("\n Enter your choice:")
+            if selection == '1':
+                check_sublease()
+            elif selection == '2':
+                check_service()
+            elif selection == '3':
+                display_apartment()
+            else:
+                raise KeyError('\n Invalid option, try again')
+        except KeyError as ke:
+            print('\n{0}'.format(ke))
+            continue
+        menu_selection = False
 
 
 
