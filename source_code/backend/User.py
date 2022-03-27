@@ -60,7 +60,6 @@ Return value : None
 def get_one_user(query):
     try:
         user = db.get_one_record(c_name,query)
-        query = {}
         return user
     except Exception as e:
         print("\n User not found in collection {}, exception {}".format(c_name,e.__name__))

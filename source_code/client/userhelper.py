@@ -27,7 +27,19 @@ def login_helper():
     print("\n ********************************************************************************** \n")
     username = input("\n Enter your username: ")
     password = getpass("\n Enter the password: ")
-    print(username,password)
+    q = {}
+    data = {}
+    q['username'] = username
+    current_User = user.get_one_user(q)
+    data.update({'username':current_User['username'],'_id':current_User['_id'],'password':current_User['password']})
+    if current_User['userType'] == userTypes[1]:
+        tenant_path(data,'login')
+    elif current_User['userType'] == userTypes[2]:
+        owner_path(data,'login')
+    elif current_User['userType'] == userTypes[3]:
+        staff_path(data,'login')
+
+    
 
 
 
@@ -44,10 +56,10 @@ def signup_helper():
     print("\n ********************************************************************************** \n")
     firstname = input("\nEnter your First Name: ")
     lastname  = input("\nEnter your Last Name:  ")
-    email     = input("\n Enter your Email ID:  ") 
-    username  = input("\n Enter your preferred username: ")
-    password  = getpass("\n Enter your password: ") 
-    confirmpassword = getpass("\n Re-enter the password: ")
+    email     = input("\nEnter your Email ID:  ") 
+    username  = input("\nEnter your preferred username: ")
+    password  = getpass("\nEnter your password: ") 
+    confirmpassword = getpass("\nRe-enter the password: ")
     if password == confirmpassword:
         password = encryptPassword(password)
     else:
@@ -61,10 +73,12 @@ def signup_helper():
         issignedUp = tenant_path(data,'signup')
     elif select_userType == '2':
         userType= userTypes[2]
-        owner_path()
+        data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
+        owner_path(data,'signup')
     elif select_userType == '3':
         userType= userTypes[3]
-        staff_path()
+        data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
+        staff_path(data,'signup')
     else:
         print("\n Invalid option")
     return issignedUp
@@ -141,7 +155,7 @@ def tenant_path(data,typeAction):
             print("\n Error in signing up User, please try again")
             return signedup
     elif typeAction == 'login':
-        print("\n Tenant login path")
+        tenant_menu()
 
 
 
@@ -152,6 +166,11 @@ Return value : signedup -> Boolean
 '''  
 def owner_path(data,typeAction):
     print("\n Owner path called")
+    if typeAction == 'signup':
+        print("\n Owner signup path")
+    elif typeAction =='login':
+        owner_menu()
+
 
 ''' Staff path
 Purpose: The below function is used as a added function  for staff signup 
@@ -160,9 +179,19 @@ Return value : signedup -> Boolean
 '''  
 def staff_path(data,typeAction):
     print("\n Staff path called")
+    if typeAction == 'signup':
+        print("\n Staff signup path")
+    elif typeAction == 'login':
+        staff_menu()
     
 
-    
+def tenant_menu():
+    pass
+def owner_menu():
+    pass
+def staff_menu():
+    pass
+
 
 
 
