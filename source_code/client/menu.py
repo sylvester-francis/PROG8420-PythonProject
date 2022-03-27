@@ -7,8 +7,6 @@ Last Modified by  : Sylvester Francis
 """
 from menuhelper import *
 
-
-
 '''Main menu 
 Purpose: The below function is used to display the main menu 
 Params : None

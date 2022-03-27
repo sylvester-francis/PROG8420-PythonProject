@@ -132,7 +132,7 @@ def tenant_path(data,typeAction):
         print("\n ********************************************************************************** \n")
         for index,item in enumerate(apartmentlist):
             print("\n ****************************** Facilities of Apartment - {0} ********************************************* \n".format(index+1))
-            print("\n Furnished :{0}, \n No Of Washrooms : {1}, \n Ensuite Washroom: {2}, \n Ensuite Laundry: {3}, \n Rent Price: {4}".format(item['isFurnished'],item['noOfWashrooms'],item['hasEnsuiteWashroom'],item['hasEnsuiteLaundry'],0))
+            print("\n Furnished :{0}, \n No Of Washrooms : {1}, \n Ensuite Washroom: {2}, \n Ensuite Laundry: {3}, \n Rent Price: {4}".format(item['isFurnished'],item['noOfWashrooms'],item['hasEnsuiteWashroom'],item['hasEnsuiteLaundry'],item['rentalPrice']))
             apartmentid[index+1] = item['_id']
         print("\n ********************************************************************************** \n")
         print("\n ********************************************************************************** \n")
