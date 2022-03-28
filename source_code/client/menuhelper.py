@@ -2,7 +2,7 @@
 Code created by Sylvester Francis
 Student ID : 8735728
 Created date : 26 March 2022
-Last Modified date : 27 February 2022
+Last Modified date : 27 March 2022
 Last Modified by  : Parvathy Suresh
 """
 import re
@@ -65,7 +65,7 @@ def signup_helper():
     lastname  = input("\nEnter your Last Name:  ")
     while errorEmail:
         try:
-            email     = input("\nEnter your Email ID:  ")
+            email = input("\nEnter your Email ID:  ")
             if not (re.fullmatch(emailRegex, email)):
                 raise KeyError("Please enter valid email address in format abc@abc.com")
         except KeyError as ke:
@@ -76,10 +76,8 @@ def signup_helper():
         query = {}
         try:
             username  = input("\nEnter your preferred username: ")
-            user_data = None
             query['username'] = username
-            #user_data = user.get_one_user(query)
-            print(user_data)
+            user_data = user.get_one_user(query)
             if user_data != None:
                 raise KeyError("Sorry,Entered UserName is already available, Please choose another username!!!")
         except KeyError as ke:
