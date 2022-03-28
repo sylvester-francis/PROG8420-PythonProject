@@ -123,7 +123,7 @@ def signup_helper():
     elif select_userType == '2':
         userType= userTypes[2]
         data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
-        owner_path(data,'signup')
+        issignedUp= owner_path(data,'signup')
     elif select_userType == '3':
         userType= userTypes[3]
         data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
@@ -215,8 +215,41 @@ Return value : signedup -> Boolean
 '''  
 def owner_path(data,typeAction):
     print("\n Owner path called")
+    errorBuilding = True
     if typeAction == 'signup':
         print("\n Owner signup path")
+        print("\nHere are the list of buildings available: ") 
+        buildings = building.get_multiple_buildingInfo()
+        building_list = {}
+        print("\n ********************************************************************************** \n")
+        for index,item in enumerate(buildings):
+            print("\n ****************************** General-Details of Building - {0} ********************************************* \n".format(index+1))
+            print("\n Name of the building : {0} \n Address: {1} \n City: {2} \n PostalCode: {3} \n Province: {4} ".format(item['buildingName'],item['Address'],item['City'],item['postalCode'],item['province']))
+            building_list[index+1] = item['_id'] 
+        print("\n ********************************************************************************** \n")
+        while errorBuilding:
+            try:
+                select_building = int(input("\n Enter the building that you own: "))
+                if select_building not in building_list.keys():
+                    raise KeyError("Building not found please try again")
+                else:
+                    data['buildingId'] = building_list[select_building]
+            except KeyError as ke:
+                print("\n{0}".format(ke))
+                continue  
+            errorBuilding = False
+        user_obj = user.signup(data)
+        if user_obj != None:
+            print("\n Owner signed up successfully")
+            signedup = True
+            return signedup
+        else:
+            print("\n Error in signing up Owner, please try again")
+            return signedup
+        
+                
+
+        
     elif typeAction =='login':
         owner_menu()
 

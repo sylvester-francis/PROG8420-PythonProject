@@ -14,14 +14,14 @@ from bson.objectid import ObjectId
 def get_database():
     # Provide the mongodb atlas url to connect python to mongodb using pymongo
     try:
-        # For Atlas connect
-        #CONNECTION_STRING = "mongodb+srv://administrator:appsrdsf123@pythonproject.bafek.mongodb.net/rental_system?retryWrites=true&w=majority"
-        #client = MongoClient(CONNECTION_STRING)
+        #For Atlas connect
+        CONNECTION_STRING = "mongodb+srv://administrator:appsrdsf123@pythonproject.bafek.mongodb.net/rental_system?retryWrites=true&w=majority"
+        client = MongoClient(CONNECTION_STRING)
 
         # Local Connect
-        hostname = 'localhost'
-        port = 27017
-        client =MongoClient(hostname,port)
+        # hostname = 'localhost'
+        # port = 27017
+        # client =MongoClient(hostname,port)
         
         # print("\n Client {}".format(str(client)))
         database_obj =  client['rental_system']

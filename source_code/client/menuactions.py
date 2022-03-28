@@ -18,8 +18,7 @@ def viewProfile(data):
     q['password'] = data['password']
     current_User = user.get_one_user(q)
     print("\n ******************************User Details***************************************** \n")
-    print("\n First Name : {0} \n Last Name: {1} \n Email: {2} \n User name: {3} \n Phone Number: {4} ".format(current_User['FirstName']
-    ,current_User['LastName'],current_User['email'],current_User['username'],current_User['phoneNumber']))
+    print("\n First Name : {0} \n Last Name: {1} \n Email: {2} \n User name: {3} \n Phone Number: {4} ".format(current_User['FirstName'],current_User['LastName'],current_User['email'],current_User['username'],current_User['phoneNumber']))
     print("\n ********************************************************************************** \n")
 def viewapartment():
     print("\n view apartment called")
