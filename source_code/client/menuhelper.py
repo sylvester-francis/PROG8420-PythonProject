@@ -28,12 +28,25 @@ def login_helper():
     print("\n ********************************************************************************** \n")
     print(" \n Login")
     print("\n ********************************************************************************** \n")
-    username = input("\n Enter your username: ")
-    password = getpass("\n Enter the password: ")
     q = {}
     data = {}
-    q['username'] = username
-    current_User = user.get_one_user(q)
+    isUser = True
+
+    while isUser:
+        try:
+            username = input("\n Enter your username: ")
+            password = getpass("\n Enter the password: ")
+            q['username'] = username
+            current_User = user.get_one_user(q)
+            if current_User == None:
+                raise KeyError("Please enter valid username or password")
+            decPassword = decryptPassword(current_User['password'])
+            if password!=decPassword:
+                raise KeyError("Please enter valid username or password")
+        except KeyError as ke:
+            print("\n{0}".format(ke))
+            continue  
+        isUser = False
     data.update({'username':current_User['username'],'_id':current_User['_id'],'password':current_User['password']})
     if current_User['userType'] == userTypes[1]:
         tenant_path(data,'login')
