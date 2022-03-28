@@ -2,7 +2,7 @@
 Code created by Sylvester Francis
 Student ID : 8735728
 Created date : 26 March 2022
-Last Modified date : 27 March 2022
+Last Modified date : 28 March 2022
 Last Modified by  : Parvathy Suresh
 """
 import re
@@ -16,6 +16,7 @@ from getpass import getpass
 from helper import clear,encryptPassword,decryptPassword
 from bson.objectid import ObjectId
 userTypes = {1:'Tenant',2:'Owner',3:'Staff'}
+isloggedin =False
 
 ''' Login helper
 Purpose: The below function is used as a helper function for login 
@@ -88,6 +89,7 @@ def signup_helper():
     confirmpassword = getpass("\nRe-enter the password: ")
     if password == confirmpassword:
         password = encryptPassword(password)
+
     else:
         print("\n Password doesnot match")
     while errorPhone:
@@ -189,7 +191,7 @@ def tenant_path(data,typeAction):
             print("\n Error in signing up User, please try again")
             return signedup
     elif typeAction == 'login':
-        tenant_menu()
+        tenant_menu(data)
 
 
 
@@ -219,7 +221,7 @@ def staff_path(data,typeAction):
         staff_menu()
     
 
-def tenant_menu():
+def tenant_menu(data):
     clear()
     menu_selection = True
     print("\n ********************************************************************************** \n")
@@ -233,7 +235,7 @@ def tenant_menu():
         try:
             selection = input("\n Enter your choice:")
             if selection == '1':
-                viewProfile()
+                viewProfile(data)
             elif selection == '2':
                 viewapartment()
             elif selection == '3':
