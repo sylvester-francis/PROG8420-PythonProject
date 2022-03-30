@@ -127,7 +127,7 @@ def signup_helper():
     elif select_userType == '3':
         userType= userTypes[3]
         data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
-        staff_path(data,'signup')
+        issignedUp= staff_path(data,'signup')
     else:
         print("\n Invalid option")
     return issignedUp
@@ -261,8 +261,38 @@ Return value : signedup -> Boolean
 '''  
 def staff_path(data,typeAction):
     print("\n Staff path called")
+    errorBuilding = True
     if typeAction == 'signup':
         print("\n Staff signup path")
+        print("\nHere are the list of buildings available: ") 
+        buildings = building.get_multiple_buildingInfo()
+        building_list = {}
+        print("\n ********************************************************************************** \n")
+        for index,item in enumerate(buildings):
+            print("\n ****************************** General-Details of Building - {0} ********************************************* \n".format(index+1))
+            print("\n Name of the building : {0} \n Address: {1} \n City: {2} \n PostalCode: {3} \n Province: {4} ".format(item['buildingName'],item['Address'],item['City'],item['postalCode'],item['province']))
+            building_list[index+1] = item['_id'] 
+        print("\n ********************************************************************************** \n")
+        while errorBuilding:
+            try:
+                select_building = int(input("\n Enter the building that you work at: "))
+                if select_building not in building_list.keys():
+                    raise KeyError("Building not found please try again")
+                else:
+                    data['buildingId'] = building_list[select_building]
+            except KeyError as ke:
+                print("\n{0}".format(ke))
+                continue  
+            errorBuilding = False
+        user_obj = user.signup(data)
+        if user_obj != None:
+            print("\n Staff signed up successfully")
+            signedup = True
+            return signedup
+        else:
+            print("\n Error in signing up Staff, please try again")
+            return signedup
+        
     elif typeAction == 'login':
         staff_menu()
     
@@ -334,7 +364,7 @@ def staff_menu():
     print("\n ********************************************************************************** \n")
     print("\n 1. Check for sublease requests ")
     print("\n 2. Check for service requests ")
-    print("\n 3. Display Apartment information ")
+    print("\n 3. Display Building information ")
     print(" \n Please choose one of the following options to continue")
     while menu_selection:
         try:
