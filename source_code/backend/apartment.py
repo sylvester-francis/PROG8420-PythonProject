@@ -21,7 +21,7 @@ Return value : apartment information
 '''
 def get_apartment_info(query):
     try:
-        query['buildingId'] = '621ef1e586ed827ec8845a16'
+        #query['buildingId'] = '621ef1e586ed827ec8845a16'
         apartment = db.get_one_record(c_name,query)
         return apartment
     except Exception as e:

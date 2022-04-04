@@ -69,9 +69,9 @@ Purpose: The below function is used to return multiple user data
 Params : None
 Return value : user_list -> List of all the users present in the collection
 '''
-def get_multiple_users():
+def get_multiple_users(query = {}):
     global user_list
-    users = db.get_many_records(c_name)
+    users = db.get_many_records(c_name,query)
     for user in users:
         user_list.append(user)
     return user_list

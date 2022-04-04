@@ -251,7 +251,7 @@ def owner_path(data,typeAction):
 
         
     elif typeAction =='login':
-        owner_menu()
+        owner_menu(data)
 
 
 ''' Staff path
@@ -313,13 +313,13 @@ def tenant_menu(data):
             if selection == '1':
                 viewProfile(data)
             elif selection == '2':
-                viewapartment()
+                viewapartment(data)
             elif selection == '3':
                 raise_service_req()
             elif selection == '4':
                 raise_sublet_req()
             elif selection == '5':
-                pay_rent()
+                pay_rent(data)
             else:
                 raise KeyError('\n Invalid option, try again')
         except KeyError as ke:
@@ -327,7 +327,7 @@ def tenant_menu(data):
             continue
         menu_selection = False
     
-def owner_menu():
+def owner_menu(data):
     clear()
     menu_selection = True
     print("\n ********************************************************************************** \n")
@@ -345,7 +345,7 @@ def owner_menu():
             elif selection == '2':
                 GenReport()
             elif selection == '3':
-                CheckEmpInfo()
+                CheckEmpInfo(data)
             elif selection == '4':
                 DisplayRentInfo()
             elif selection == '5':
