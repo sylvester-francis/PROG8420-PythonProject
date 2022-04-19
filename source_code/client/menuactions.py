@@ -63,8 +63,12 @@ def pay_rent(data):
 '''Owner Actions'''
 def BuildingInfo():
     print("\n Building info called")
+
+
 def GenReport():
     print("\n Gen report called")
+
+
 def CheckEmpInfo(data):
     q = {}
     q['_id'] = ObjectId(data['_id'])
@@ -77,8 +81,12 @@ def CheckEmpInfo(data):
         print("\n ******************************Details of Staff - {0} ********************************************* \n".format(index+1))
         print("\n FirstName : {0} \n LastName: {1} \n Email: {2} \n PhoneNumber: {3} \n ".format(item['FirstName'],item['LastName'],item['email'],item['phoneNumber']))
     print("\n ********************************************************************************** \n")
+
+
 def DisplayRentInfo():
     print("\n Display Rent Info called")
+
+
 def DisplayApartmentInformation():
     print("\n DisplayApartmentInfomation called")
 
@@ -86,8 +94,10 @@ def DisplayApartmentInformation():
 '''Staff Actions'''
 def check_sublease():
     print("\n Check sublease called")
+
 def check_service():
     print("\n Check service called")
+    
 def display_apartment():
     print("\n Display apartment")
 

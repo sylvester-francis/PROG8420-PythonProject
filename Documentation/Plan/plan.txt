@@ -1,0 +1,8 @@
+Database Design : MongoDB
+Apartments - collection
+Tenants - collection
+Payments - collection
+Administrators - collection
+
+
+

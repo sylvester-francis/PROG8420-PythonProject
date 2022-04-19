@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "625f1e04b0861b379a4da05b"
+  },
+  "userid": {
+    "$oid": "621eee8586ed827ec88459b8"
+  },
+  "appartmentid": {
+    "$oid": "6220bd99c0ca8d05b208b7f4"
+  },
+  "buildingid": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  },
+  "requiresService": false
+},{
+  "_id": {
+    "$oid": "625f1e2bb0861b379a4da05c"
+  },
+  "userid": {
+    "$oid": "621eee8586ed827ec88459b8"
+  },
+  "appartmentid": {
+    "$oid": "6220bd99c0ca8d05b208b7f3"
+  },
+  "buildingid": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  },
+  "requiresService": true
+}]

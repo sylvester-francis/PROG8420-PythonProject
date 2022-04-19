@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "625c7b2f3f7fbf24dc536739"
+  },
+  "userid": {
+    "$oid": "621eee8586ed827ec88459b8"
+  },
+  "appartmentid": {
+    "$oid": "6220bd99c0ca8d05b208b7f3"
+  },
+  "buildingid": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  },
+  "RequestedSublet": true
+},{
+  "_id": {
+    "$oid": "625c7bcc3f7fbf24dc53673e"
+  },
+  "userid": {
+    "$oid": "621eee8586ed827ec88459b8"
+  },
+  "appartmentid": {
+    "$oid": "6220bd99c0ca8d05b208b7f4"
+  },
+  "buildingid": {
+    "$oid": "621ef1e586ed827ec8845a11"
+  },
+  "RequestedSublet": false
+}]
