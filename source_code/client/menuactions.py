@@ -14,7 +14,6 @@ from bson.objectid import ObjectId
 
 
 '''Tenant Actions'''
-
 def viewProfile(data):
     q = {}
     q['username'] = data['username']
@@ -34,10 +33,11 @@ def viewapartment(data):
     else:
         print("\n Apartment Not Found \n")
 
-
+#TODO : For Parvathy
 def raise_service_req():
     print("\n raise service req called")
 
+#TODO : For Parvathy
 def raise_sublet_req():
     print("\n raise sublet req called")
 
@@ -67,6 +67,7 @@ def pay_rent(data):
                 print("\n Apartment Not Found \n")
 
 '''Owner Actions'''
+# TODO : FOR RACHEL
 def BuildingInfo():
     print("\n Building info called")
 
@@ -90,7 +91,6 @@ def CheckEmpInfo(data):
 
 
 def DisplayRentInfo(data):
-    print("\n Display Rent Info called")
     q = {}
     query_building = {}
     query_rental = {}
@@ -104,20 +104,45 @@ def DisplayRentInfo(data):
     print("\n Building Name : {0} \n Rental Period : {1} \n Rent Paid: {2} \n Advance Paid: {3} \n Deposit Paid: {4} \n Rent due on: {5} \n".format(current_Building['buildingName'],current_rental['rentalPeriod'],current_rental['rentPaid'],current_rental['advancePaid'],current_rental['depositPaid'],current_rental['rentDueOn']))
 
 
-
-def DisplayApartmentInformation():
+#TODO : Print statement to be modified - Rachel
+def DisplayApartmentInformation(data):
     print("\n DisplayApartmentInfomation called")
+    q = {}
+    query_building = {}
+    query_apartment = {}
+    q['_id'] = ObjectId(data['_id'])
+    current_User = user.get_one_user(q)
+    query_building['_id'] = current_User['buildingId']
+    query_apartment['buildingId'] = current_User['buildingId']
+    current_Building = building.get_building_info(query_building)
+    current_apartment = apartment.get_multiple_apartmentInfo(query_apartment)
+    print("\n ******************************Apartment information ********************************************* \n")
+    print("\n Building Name : {0} \n Rental Period : {1} \n Rent Paid: {2} \n Advance Paid: {3} \n Deposit Paid: {4} \n Rent due on: {5} \n".format(current_Building['buildingName'],current_rental['rentalPeriod'],current_rental['rentPaid'],current_rental['advancePaid'],current_rental['depositPaid'],current_rental['rentDueOn']))
 
 
+    
 '''Staff Actions'''
+#TODO : For Parvathy
 def check_sublease():
     print("\n Check sublease called")
-
+#TODO : For Parvathy
 def check_service():
     print("\n Check service called")
-    
-def display_apartment():
-    print("\n Display apartment")
+
+#TODO : For Rachel  
+def display_apartment(data):
+    print("\n DisplayApartmentInfomation called")
+    q = {}
+    query_building = {}
+    query_apartment = {}
+    q['_id'] = ObjectId(data['_id'])
+    current_User = user.get_one_user(q)
+    query_building['_id'] = current_User['buildingId']
+    query_apartment['buildingId'] = current_User['buildingId']
+    current_Building = building.get_building_info(query_building)
+    current_apartment = apartment.get_multiple_apartmentInfo(query_apartment)
+    print("\n ******************************Apartment information ********************************************* \n")
+    print("\n Building Name : {0} \n Rental Period : {1} \n Rent Paid: {2} \n Advance Paid: {3} \n Deposit Paid: {4} \n Rent due on: {5} \n".format(current_Building['buildingName'],current_rental['rentalPeriod'],current_rental['rentPaid'],current_rental['advancePaid'],current_rental['depositPaid'],current_rental['rentDueOn']))
 
 
 

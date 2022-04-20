@@ -341,15 +341,15 @@ def owner_menu(data):
         try:
             selection = input("\n Enter your choice:")
             if selection == '1':
-                BuildingInfo()
+                BuildingInfo(data)
             elif selection == '2':
                 GenReport()
             elif selection == '3':
                 CheckEmpInfo(data)
             elif selection == '4':
-                DisplayRentInfo()
+                DisplayRentInfo(data)
             elif selection == '5':
-                DisplayApartmentInformation()
+                DisplayApartmentInformation(data)
             else:
                 raise KeyError('\n Invalid option, try again')
         except KeyError as ke:
