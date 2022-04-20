@@ -13,6 +13,7 @@ import backend.RentalInfo as rental
 import backend.sublet as sublet
 import backend.service as service
 from bson.objectid import ObjectId
+from prettytable import PrettyTable
 
 
 '''Tenant Actions'''
@@ -108,7 +109,16 @@ def pay_rent(data):
 '''Owner Actions'''
 # TODO : FOR RACHEL
 def BuildingInfo():
-    print("\n Building info called")
+    building_dict = {}
+    building_table = PrettyTable()
+    buildings = building.get_multiple_buildingInfo()
+    for b in buildings:
+        building_dict.update({'Building Name':b['buildingName'],'Address':b['Address'],'City':b['City'],'PostalCode':b['postalCode'],'Province':b['province'],'Furnished':b['isFurnished'],'Parking':b['isParkingAvailable'],'Storage':b['storageAreaAvailable'],'PetFriendly':b['petFriendly']})
+        building_table.field_names = building_dict.keys()
+        building_table.add_row(building_dict.values())
+    print(building_table)
+    
+
 
 
 def GenReport():
@@ -156,8 +166,10 @@ def DisplayApartmentInformation(data):
     query_apartment['buildingId'] = current_User['buildingId']
     current_Building = building.get_building_info(query_building)
     current_apartment = apartment.get_multiple_apartmentInfo(query_apartment)
-    print("\n ******************************Apartment information ********************************************* \n")
-    print("\n Building Name : {0} \n Rental Period : {1} \n Rent Paid: {2} \n Advance Paid: {3} \n Deposit Paid: {4} \n Rent due on: {5} \n".format(current_Building['buildingName'],current_rental['rentalPeriod'],current_rental['rentPaid'],current_rental['advancePaid'],current_rental['depositPaid'],current_rental['rentDueOn']))
+    for index,item in enumerate(current_apartment):
+        print("\n ******************************Apartment information ********************************************* \n")
+        print("\n Building Name : {0} \n Furnished : {1} \n Available : {2} \n Unit Type: {3} \n No. of Washrooms: {4} \n Ensuite Washroom: {5} \n Ensuite Laundry: {6}  \n Rent: {7} \n".format(current_Building['buildingName'],item['isFurnished'],item['isAvailable'],item['unitType'],item['noOfWashrooms'],item['hasEnsuiteWashroom'],item['hasEnsuiteLaundry'],item['rentalPrice']))
+    print("\n ********************************************************************************** \n")
 
 
     
@@ -217,8 +229,8 @@ def display_apartment(data):
     query_apartment['buildingId'] = current_User['buildingId']
     current_Building = building.get_building_info(query_building)
     current_apartment = apartment.get_multiple_apartmentInfo(query_apartment)
-    print("\n ******************************Apartment information ********************************************* \n")
-    print("\n Building Name : {0} \n Rental Period : {1} \n Rent Paid: {2} \n Advance Paid: {3} \n Deposit Paid: {4} \n Rent due on: {5} \n".format(current_Building['buildingName'],current_rental['rentalPeriod'],current_rental['rentPaid'],current_rental['advancePaid'],current_rental['depositPaid'],current_rental['rentDueOn']))
-
-
+    for index,item in enumerate(current_apartment):
+        print("\n ******************************Apartment information ********************************************* \n")
+        print("\n Building Name : {0} \n Furnished : {1} \n Available : {2} \n Unit Type: {3} \n No. of Washrooms: {4} \n Ensuite Washroom: {5} \n Ensuite Laundry: {6}  \n Rent: {7} \n".format(current_Building['buildingName'],item['isFurnished'],item['isAvailable'],item['unitType'],item['noOfWashrooms'],item['hasEnsuiteWashroom'],item['hasEnsuiteLaundry'],item['rentalPrice']))
+    print("\n ********************************************************************************** \n")
 
