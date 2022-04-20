@@ -18,7 +18,7 @@ from getpass import getpass #Added for password hiding
 Global Variables
 """
 client = db.get_database()
-c_name = client["rentalInfo"] # c_name => Collection Name
+c_name = client["subleases"] # c_name => Collection Name
 info_list = []
 
 
@@ -55,9 +55,9 @@ Purpose: The below function is used to return multiple rental info data
 Params : None
 Return value : info_list -> List of all the info present in the rentalInfo collection
 '''
-def get_multiple_subletInfos():
+def get_multiple_subletInfos(query = {}):
     global info_list
-    info = db.get_many_records(c_name)
+    info = db.get_many_records(c_name,query)
     for subletInfo in info:
         info_list.append(subletInfo)
     return info_list

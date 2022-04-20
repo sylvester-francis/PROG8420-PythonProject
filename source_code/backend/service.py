@@ -55,9 +55,9 @@ Purpose: The below function is used to return multiple service information data
 Params : None
 Return value : info_list -> List of all the info present in the rentalInfo collection
 '''
-def get_multiple_serviceInfos():
+def get_multiple_serviceInfos(query = {}):
     global info_list
-    info = db.get_many_records(c_name)
+    info = db.get_many_records(c_name,query)
     for serviceInfo in info:
         info_list.append(serviceInfo)
     return info_list

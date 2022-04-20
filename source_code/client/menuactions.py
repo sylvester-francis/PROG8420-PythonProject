@@ -10,6 +10,8 @@ import backend.User as user
 import backend.apartment as apartment
 import backend.Building as building
 import backend.RentalInfo as rental
+import backend.sublet as sublet
+import backend.service as service
 from bson.objectid import ObjectId
 
 
@@ -124,10 +126,45 @@ def DisplayApartmentInformation(data):
 '''Staff Actions'''
 #TODO : For Parvathy
 def check_sublease():
-    print("\n Check sublease called")
+    query = {}
+    query['RequestedSublet'] = True
+    sublet_info = sublet.get_multiple_subletInfos(query)
+    for index,item in enumerate(sublet_info):
+        q = {}
+        q['_id'] = item['buildingid']
+        current_Building = building.get_building_info(q)
+        query_apartment = {}
+        query_apartment['_id'] = item['appartmentid']
+        current_apartment = apartment.get_apartment_info(query_apartment)
+        query_user = {}
+        query_user['_id'] = item['userid']
+        current_User = user.get_one_user(query_user)
+        print("\n ******************************Details of Sublease Requested User - {0} ********************************************* \n".format(index+1))
+        print("\n FirstName : {0} \n LastName: {1} \n Email: {2} \n PhoneNumber: {3}  \n Apartment Unit Type: {4}  \nBuilding Name: {5}  \nBuilding Address: {6}  \nCity: {7}\n ".format(current_User['FirstName'],
+        current_User['LastName'],current_User['email'],current_User['phoneNumber'],current_apartment['unitType'],
+        current_Building['buildingName'],current_Building['Address'],current_Building['City']))
+    print("\n ********************************************************************************** \n")
 #TODO : For Parvathy
 def check_service():
     print("\n Check service called")
+    query = {}
+    query['requiresService'] = True
+    service_info = service.get_multiple_serviceInfos(query)
+    for index,item in enumerate(service_info):
+        q = {}
+        q['_id'] = item['buildingid']
+        current_Building = building.get_building_info(q)
+        query_apartment = {}
+        query_apartment['_id'] = item['appartmentid']
+        current_apartment = apartment.get_apartment_info(query_apartment)
+        query_user = {}
+        query_user['_id'] = item['userid']
+        current_User = user.get_one_user(query_user)
+        print("\n ******************************Details of Service Requested User - {0} ********************************************* \n".format(index+1))
+        print("\n FirstName : {0} \n LastName: {1} \n Email: {2} \n PhoneNumber: {3}  \n Apartment Unit Type: {4}  \nBuilding Name: {5}  \nBuilding Address: {6}  \nCity: {7}\n ".format(current_User['FirstName'],
+        current_User['LastName'],current_User['email'],current_User['phoneNumber'],current_apartment['unitType'],
+        current_Building['buildingName'],current_Building['Address'],current_Building['City']))
+    print("\n ********************************************************************************** \n")
 
 #TODO : For Rachel  
 def display_apartment(data):
