@@ -315,9 +315,9 @@ def tenant_menu(data):
             elif selection == '2':
                 viewapartment(data)
             elif selection == '3':
-                raise_service_req()
+                raise_service_req(data)
             elif selection == '4':
-                raise_sublet_req()
+                raise_sublet_req(data)
             elif selection == '5':
                 pay_rent(data)
             else:

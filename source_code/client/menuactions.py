@@ -36,12 +36,45 @@ def viewapartment(data):
         print("\n Apartment Not Found \n")
 
 #TODO : For Parvathy
-def raise_service_req():
-    print("\n raise service req called")
-
+def raise_service_req(data):
+    q = {}
+    q['username'] = data['username']
+    q['password'] = data['password']
+    current_User = user.get_one_user(q)
+    query = {}
+    query['buildingId'] = current_User['buildingId']
+    current_Apartment = apartment.get_apartment_info(query)
+    query_service = {}
+    query_service['userid'] = current_User['_id']
+    query_service['appartmentid'] = current_Apartment['_id']
+    query_service['buildingid'] = current_Apartment['buildingId']
+    query_service['requiresService'] = True
+    service_request = service.createService(query_service)
+    if service_request != None:
+        print("\n Apartment Service requested successfully")
+    else:
+        print("\n Error in raising Apartment Service request, please try again")
+            
 #TODO : For Parvathy
-def raise_sublet_req():
+def raise_sublet_req(data):
     print("\n raise sublet req called")
+    q = {}
+    q['username'] = data['username']
+    q['password'] = data['password']
+    current_User = user.get_one_user(q)
+    query = {}
+    query['buildingId'] = current_User['buildingId']
+    current_Apartment = apartment.get_apartment_info(query)
+    query_sublet = {}
+    query_sublet['userid'] = current_User['_id']
+    query_sublet['appartmentid'] = current_Apartment['_id']
+    query_sublet['buildingid'] = current_Apartment['buildingId']
+    query_sublet['RequestedSublet'] = True
+    sublet_request = sublet.createSubletInfo(query_sublet)
+    if sublet_request != None:
+        print("\n Apartment Sublease requested successfully")
+    else:
+        print("\n Error in raising Apartment Sublease request, please try again")
 
 def pay_rent(data):
     error_entry = True
