@@ -31,10 +31,14 @@ def viewapartment(data):
         print("\n ********************************************************************************** \n")
     else:
         print("\n Apartment Not Found \n")
+
+
 def raise_service_req():
     print("\n raise service req called")
+
 def raise_sublet_req():
     print("\n raise sublet req called")
+
 def pay_rent(data):
     error_entry = True
     while error_entry:
@@ -67,6 +71,9 @@ def BuildingInfo():
 
 def GenReport():
     print("\n Gen report called")
+
+
+
 
 
 def CheckEmpInfo(data):

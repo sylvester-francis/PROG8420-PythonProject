@@ -31,7 +31,7 @@ def signup(data):
         data_inserted = db.insert_into_collection(c_name,data)
         return data_inserted
     except Exception as e:
-        print("\n Error signing up to the system due to exception {} ".format(e.__name__))
+        print("\n Error signing up to the system due to exception {} ".format(e))
         return None
 
 '''Login function
@@ -44,7 +44,7 @@ def login(query):
         user = db.get_one_record(c_name,query)
         return user
     except Exception as e:
-        print("\n Error logging in to the system due to exception {} ".format(e.__name__))
+        print("\n Error logging in to the system due to exception {} ".format(e))
         return None
 
 
@@ -62,7 +62,7 @@ def get_one_user(query):
         user = db.get_one_record(c_name,query)
         return user
     except Exception as e:
-        print("\n User not found in collection {}, exception {}".format(c_name,e.__name__))
+        print("\n User not found in collection {}, exception {}".format(c_name,e))
 
 '''Get multiple user information
 Purpose: The below function is used to return multiple user data
@@ -87,7 +87,7 @@ def update_user(query,data):
         print(data_updated)
         return data_updated
     except Exception as  e:
-        print("\n Error updating the user due to exception {} ".format(e.__name__))
+        print("\n Error updating the user due to exception {} ".format(e))
         return None
 
 '''Delete user information
@@ -101,6 +101,6 @@ def delete_user(query):
         print(data_deleted)
         return data_deleted
     except Exception as e:
-        print("\n Error deleting the user due to exception {} ".format(e.__name__))
+        print("\n Error deleting the user due to exception {} ".format(e))
         return None
 

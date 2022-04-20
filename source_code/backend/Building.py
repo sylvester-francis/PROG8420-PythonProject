@@ -24,7 +24,7 @@ def get_building_info(query):
         building = db.get_one_record(c_name,query)
         return building
     except Exception as e:
-        print("\n Building info not found in collection {}, exception {}".format(c_name,e.__name__))
+        print("\n Building info not found in collection {}, exception {}".format(c_name,e))
 
 '''Get multiple building information
 Purpose: The below function is used to return multiple building data
@@ -49,7 +49,7 @@ def create_buildingInfo(data):
         print(data_inserted)
         return data_inserted
     except Exception as e:
-        print("\n Error creating new record to rental info collection due to exception {} ".format(e.__name__))
+        print("\n Error creating new record to rental info collection due to exception {} ".format(e))
         return None
 
 '''Update building information
@@ -64,7 +64,7 @@ def update_buildingInfo(query,data):
         query = {}
         return data_updated
     except Exception as  e:
-        print("\n Error updating the user due to exception {} ".format(e.__name__))
+        print("\n Error updating the user due to exception {} ".format(e))
         return None
 
 
@@ -79,6 +79,6 @@ def delete_buildingInfo(query):
         print(data_deleted)
         return data_deleted
     except Exception as e:
-        print("\n Error deleting the rent info due to exception {} ".format(e.__name__))
+        print("\n Error deleting the rent info due to exception {} ".format(e))
         return None
 

@@ -25,7 +25,7 @@ def get_apartment_info(query):
         apartment = db.get_one_record(c_name,query)
         return apartment
     except Exception as e:
-        print("\n Apartment info not found in collection {}, exception {}".format(c_name,e.__name__))
+        print("\n Apartment info not found in collection {}, exception {}".format(c_name,e))
 
 '''Get multiple apartment information
 Purpose: The below function is used to return multiple apartment data
@@ -53,7 +53,7 @@ def create_apartmentInfo(data):
         print(data_inserted)
         return data_inserted
     except Exception as e:
-        print("\n Error creating new record to rental info collection due to exception {} ".format(e.__name__))
+        print("\n Error creating new record to rental info collection due to exception {} ".format(e))
         return None
 
 '''Update apartment information
@@ -68,7 +68,7 @@ def update_apartmentInfo(query,data):
         query = {}
         return data_updated
     except Exception as  e:
-        print("\n Error updating the user due to exception {} ".format(e.__name__))
+        print("\n Error updating the apartment due to exception {} ".format(e))
         return None
 
 
@@ -83,11 +83,6 @@ def delete_apartmentInfo(query):
         print(data_deleted)
         return data_deleted
     except Exception as e:
-        print("\n Error deleting the Apartment info due to exception {} ".format(e.__name__))
+        print("\n Error deleting the Apartment info due to exception {} ".format(e))
         return None
 
-# if __name__ == '__main__':
-#     print(get_multiple_apartmentInfo())
-#     # q = {}
-#     # q['buildingId'] = ObjectId("621ef1e586ed827ec8845a11")
-#     # print(get_multiple_apartmentInfo(q))

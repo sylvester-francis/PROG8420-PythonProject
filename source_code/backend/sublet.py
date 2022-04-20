@@ -23,17 +23,17 @@ info_list = []
 
 
 '''Create function
-Purpose: The below function is used to create a rental information 
+Purpose: The below function is used to create sublet information
 Params : None
 Return value : None
 '''
-def createRentalInfo(data):
+def createSubletInfo(data):
     try: 
         data_inserted = db.insert_into_collection(c_name,data)
         print(data_inserted)
         return data_inserted
     except Exception as e:
-        print("\n Error creating new record to rental info collection due to exception {} ".format(e.__name__))
+        print("\n Error creating new record to  collection due to exception {} ".format(e))
         return None
 
 
@@ -43,37 +43,37 @@ Purpose: The below function is used to return a  single rental info data
 Params : None
 Return value : None
 '''
-def get_one_rentalInfo(query):
+def get_one_subletInfo(query):
     try:
-        rentalInfo = db.get_one_record(c_name,query)
-        return rentalInfo
+        subletInfo = db.get_one_record(c_name,query)
+        return subletInfo
     except Exception as e:
-        print("\n Info not found in collection {}, exception {}".format(c_name,e.__name__))
+        print("\n Info not found in collection {}, exception {}".format(c_name,e))
 
-'''Get multiple user information
+'''Get multiple sublet information
 Purpose: The below function is used to return multiple rental info data
 Params : None
 Return value : info_list -> List of all the info present in the rentalInfo collection
 '''
-def get_multiple_rentalInfos():
+def get_multiple_subletInfos():
     global info_list
     info = db.get_many_records(c_name)
-    for rentalInfo in info:
-        info_list.append(rentalInfo)
+    for subletInfo in info:
+        info_list.append(subletInfo)
     return info_list
 
 '''Update user information
-Purpose: The below function is used to update rental info data
+Purpose: The below function is used to update sublet info data
 Params : None
 Return value : Boolean
 '''
-def update_rentalInfo(data,query):
+def update_subletInfo(data,query):
     try:
         data_updated = db.update_one_record(c_name,data,query)
         print(data_updated)
         return data_updated
     except Exception as  e:
-        print("\n Error updating the rental info due to exception {} ".format(e.__name__))
+        print("\n Error updating the rental info due to exception {} ".format(e))
         return None
 
 '''Delete rent information
@@ -81,12 +81,11 @@ Purpose: The below function is used to delete rent data
 Params : None
 Return value : Boolean
 '''
-def delete_rentInfo(query):
+def delete_subletInfo(query):
     try:
         data_deleted = db.delete_one_record(c_name,query)
         print(data_deleted)
         return data_deleted
     except Exception as e:
-        print("\n Error deleting the rent info due to exception {} ".format(e.__name__))
+        print("\n Error deleting the rent info due to exception {} ".format(e))
         return None
-
