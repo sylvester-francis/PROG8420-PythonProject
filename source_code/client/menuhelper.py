@@ -353,7 +353,7 @@ def owner_menu(data):
         try:
             selection = input("\n Enter your choice:")
             if selection == '1':
-                BuildingInfo(data)
+                BuildingInfo()
             elif selection == '2':
                 GenReport()
             elif selection == '3':
