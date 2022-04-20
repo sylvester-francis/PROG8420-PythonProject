@@ -114,22 +114,34 @@ def signup_helper():
             print("\n{0}".format(ke))
             continue  
         errorPhone = False
-    select_userType = input("\n Please select the type of user: \n1.Tenant \n2.Owner \n3.Staff \n Please type one of the following options(1,2 or 3)")
-    userType =''
-    if select_userType == '1':
-        userType = userTypes[1]
-        data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
-        issignedUp = tenant_path(data,'signup')
-    elif select_userType == '2':
-        userType= userTypes[2]
-        data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
-        issignedUp= owner_path(data,'signup')
-    elif select_userType == '3':
-        userType= userTypes[3]
-        data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
-        issignedUp= staff_path(data,'signup')
-    else:
-        print("\n Invalid option")
+    
+    errorUser = True
+    while errorUser:
+        try:
+            select_userType = input("\n Please select the type of user: \n1.Tenant \n2.Owner \n3.Staff \n Please type one of the following options(1,2 or 3)")
+            userType =''
+            if select_userType == '1':
+                userType = userTypes[1]
+                data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
+                issignedUp = tenant_path(data,'signup')
+                errorUser = False
+            elif select_userType == '2':
+                userType= userTypes[2]
+                data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
+                issignedUp= owner_path(data,'signup')
+                errorUser = False
+            elif select_userType == '3':
+                userType= userTypes[3]
+                data.update({'FirstName':firstname,'LastName':lastname,'email':email,'username':username,'password':password,'userType':userType,'phoneNumber':phno})
+                issignedUp= staff_path(data,'signup')
+                errorUser = False
+            else:
+                raise KeyError("\n Invalid option")
+                errorUser = True
+        except KeyError as ke:
+            print("\n{0}".format(ke))
+            continue  
+        errorUser = False
     return issignedUp
 
 
