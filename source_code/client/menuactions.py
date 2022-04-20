@@ -107,7 +107,6 @@ def pay_rent(data):
                 print("\n Invalid Amount \n")
 
 '''Owner Actions'''
-# TODO : FOR RACHEL
 def BuildingInfo():
     building_dict = {}
     building_table = PrettyTable()
@@ -122,7 +121,40 @@ def BuildingInfo():
 
 
 def GenReport():
-    print("\n Gen report called")
+    q_user = {}
+    q_user['_id'] = ObjectId('623fbcbc1ce535604cf43da7')
+    users = user.get_one_user(q_user)
+    buildings = building.get_multiple_buildingInfo()
+    apartments = apartment.get_multiple_apartmentInfo()
+    rentalInfo  = rental.get_multiple_rentalInfos()
+    user_dict = {}
+    building_dict = {}
+    apartment_dict = {}
+    rental_dict = {}
+    user_table = PrettyTable()
+    building_table = PrettyTable()
+    apartment_table = PrettyTable()
+    rental_table = PrettyTable()
+    user_dict.update({'Fname':users['FirstName'],'Lname':users['LastName'],'Email':users['email'],'UserName':users['username'],'userType':users['userType'],'Phone':users['phoneNumber']})
+    user_table.field_names = user_dict.keys()
+    user_table.add_row(user_dict.values())
+    for b in buildings:
+        building_dict.update({'Building Name':b['buildingName'],'Address':b['Address'],'City':b['City'],'PostalCode':b['postalCode'],'Province':b['province'],'Furnished':b['isFurnished'],'Parking':b['isParkingAvailable'],'Storage':b['storageAreaAvailable'],'PetFriendly':b['petFriendly']})
+        building_table.field_names = building_dict.keys()
+        building_table.add_row(building_dict.values())
+    for a in apartments:
+        apartment_dict.update({'Furnished':a['isFurnished'],'Available':a['isAvailable'],'unitType':a['unitType'],'Washrooms':a['noOfWashrooms'],'Ensuite Washroom':a['hasEnsuiteWashroom'],'Ensuite Laundry':a['hasEnsuiteLaundry'],'Rental Price':a['rentalPrice']})
+        apartment_table.field_names = apartment_dict.keys()
+        apartment_table.add_row(apartment_dict.values())
+    for r in rentalInfo:
+        rental_dict.update({'Rental Period':r['rentalPeriod'],'Rent Paid':r['rentPaid'],'Advance Paid':r['advancePaid'],'Deposit Paid':r['depositPaid'],'Rent due on':r['rentDueOn']})
+        rental_table.field_names = rental_dict.keys()
+        rental_table.add_row(rental_dict.values())
+    print(user_table)
+    print(building_table)
+    print(apartment_table)
+    print(rental_table)
+
 
 # Display the staff in that Building
 def CheckEmpInfo(data):
