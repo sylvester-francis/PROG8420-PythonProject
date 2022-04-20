@@ -8,6 +8,8 @@ Last Modified by  : Parvathy Suresh
 
 import backend.User as user
 import backend.apartment as apartment
+import backend.Building as building
+import backend.RentalInfo as rental
 from bson.objectid import ObjectId
 
 
@@ -73,9 +75,6 @@ def GenReport():
     print("\n Gen report called")
 
 
-
-
-
 def CheckEmpInfo(data):
     q = {}
     q['_id'] = ObjectId(data['_id'])
@@ -90,8 +89,20 @@ def CheckEmpInfo(data):
     print("\n ********************************************************************************** \n")
 
 
-def DisplayRentInfo():
+def DisplayRentInfo(data):
     print("\n Display Rent Info called")
+    q = {}
+    query_building = {}
+    query_rental = {}
+    q['_id'] = ObjectId(data['_id'])
+    current_User = user.get_one_user(q)
+    query_building['_id'] = current_User['buildingId']
+    current_Building = building.get_building_info(query_building)
+    query_rental['buildingId'] =  current_User['buildingId']
+    current_rental = rental.get_one_rentalInfo(query_rental)
+    print("\n ******************************Rental information ********************************************* \n")
+    print("\n Building Name : {0} \n Rental Period : {1} \n Rent Paid: {2} \n Advance Paid: {3} \n Deposit Paid: {4} \n Rent due on: {5} \n".format(current_Building['buildingName'],current_rental['rentalPeriod'],current_rental['rentPaid'],current_rental['advancePaid'],current_rental['depositPaid'],current_rental['rentDueOn']))
+
 
 
 def DisplayApartmentInformation():
