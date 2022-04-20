@@ -26,8 +26,12 @@ def viewProfile(data):
     print("\n ********************************************************************************** \n")
 def viewapartment(data):
     q = {}
-    q['userId'] = ObjectId(data['_id'])
-    current_Apartment = apartment.get_apartment_info(q)
+    q['username'] = data['username']
+    q['password'] = data['password']
+    current_User = user.get_one_user(q)
+    query = {}
+    query['buildingId'] = current_User['buildingId']
+    current_Apartment = apartment.get_apartment_info(query)
     if current_Apartment!= None:
         print("\n ******************************Apartment Details***************************************** \n")
         print("\n UnitType : {0} \n rentalPrice: {1} \n NoOfWashrooms: {2} \n IsFurnished: {3} \n Has Ensuite Laundry: {4} ".format(current_Apartment['unitType'],current_Apartment['rentalPrice'],current_Apartment['noOfWashrooms'],current_Apartment['isFurnished'],current_Apartment['hasEnsuiteLaundry']))
@@ -99,7 +103,7 @@ def pay_rent(data):
                     print("Rent amount paid successfully!!")
                     error_entry = False
             else:
-                print("\n Apartment Not Found \n")
+                print("\n Invalid Amount \n")
 
 '''Owner Actions'''
 # TODO : FOR RACHEL
@@ -110,7 +114,7 @@ def BuildingInfo():
 def GenReport():
     print("\n Gen report called")
 
-
+# Display the staff in that Building
 def CheckEmpInfo(data):
     q = {}
     q['_id'] = ObjectId(data['_id'])
@@ -124,7 +128,7 @@ def CheckEmpInfo(data):
         print("\n FirstName : {0} \n LastName: {1} \n Email: {2} \n PhoneNumber: {3} \n ".format(item['FirstName'],item['LastName'],item['email'],item['phoneNumber']))
     print("\n ********************************************************************************** \n")
 
-
+#Displays the details of the user who is paying the rent.
 def DisplayRentInfo(data):
     q = {}
     query_building = {}
@@ -140,6 +144,7 @@ def DisplayRentInfo(data):
 
 
 #TODO : Print statement to be modified - Rachel
+#error while running the method.. please see to it
 def DisplayApartmentInformation(data):
     print("\n DisplayApartmentInfomation called")
     q = {}
@@ -157,7 +162,7 @@ def DisplayApartmentInformation(data):
 
     
 '''Staff Actions'''
-#TODO : For Parvathy
+
 def check_sublease():
     query = {}
     query['RequestedSublet'] = True
@@ -177,7 +182,7 @@ def check_sublease():
         current_User['LastName'],current_User['email'],current_User['phoneNumber'],current_apartment['unitType'],
         current_Building['buildingName'],current_Building['Address'],current_Building['City']))
     print("\n ********************************************************************************** \n")
-#TODO : For Parvathy
+
 def check_service():
     print("\n Check service called")
     query = {}
@@ -200,6 +205,7 @@ def check_service():
     print("\n ********************************************************************************** \n")
 
 #TODO : For Rachel  
+#error when invoking the method
 def display_apartment(data):
     print("\n DisplayApartmentInfomation called")
     q = {}

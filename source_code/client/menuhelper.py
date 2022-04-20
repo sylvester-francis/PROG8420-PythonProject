@@ -208,6 +208,26 @@ def tenant_path(data,typeAction):
         data['buildingId'] = building_list[select_building]
         data['apartmentId'] = apartmentid[select_apartment]
         user_obj = user.signup(data)
+        q = {}
+        q['username'] = data['username']
+        q['password'] = data['password']
+        current_User = user.get_one_user(q)
+
+    
+        #updating apartment collection with user id
+
+        query_apartment = {}
+        query_apartment['_id'] = ObjectId(data['apartmentId'])
+        current_Apartment = apartment.get_apartment_info(query_apartment)
+
+        query ={}
+        print(data)
+        query['userId'] = ObjectId(current_User['_id'])
+        query['isAvailable'] = False
+        data_updated = apartment.update_apartmentInfo(current_Apartment,query)
+        print("data_updated")
+        print(data_updated)
+        
         if user_obj != None:
             print("\n User signed up successfully")
             signedup = True

@@ -48,7 +48,7 @@ def insert_apartment():
     query_apartment['unitType'] = "Single Room"
     query_apartment['rentId'] = ObjectId('621f008d86ed827ec8845a6b')
     query_apartment['noOfWashrooms'] = 2
-    query_apartment['userId'] = ObjectId('621eee8586ed827ec88459b5')
+    #query_apartment['userId'] = ObjectId('621eee8586ed827ec88459b5')
     query_apartment['isFurnished'] = True
     query_apartment['isAvailable'] = True
     query_apartment['hasEnsuiteWashroom'] = True
@@ -61,7 +61,7 @@ def insert_apartment():
     query_apartment['unitType'] = "Two Rooms"
     query_apartment['rentId'] = ObjectId('621f008d86ed827ec8845a6d')
     query_apartment['noOfWashrooms'] = 1
-    query_apartment['userId'] = ObjectId('621eee8586ed827ec88459b8')
+    #query_apartment['userId'] = ObjectId('621eee8586ed827ec88459b8')
     query_apartment['isFurnished'] = True
     query_apartment['isAvailable'] = False
     query_apartment['hasEnsuiteWashroom'] = True
