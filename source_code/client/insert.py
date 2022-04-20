@@ -74,5 +74,26 @@ def insert_apartment():
     else:
         print("\n Error in adding New Apartment, please try again")
 
-insert_building()
-insert_apartment()
+def menu():
+    print("\n ********************************************************************************** \n")
+    print("\n 1. Add Building ")
+    print("\n 2. Add Apartment ")
+    print("\n 3. Exit application")
+    print("\n ********************************************************************************** \n")
+    choice = input("\n Please enter your option ")
+    if choice == '1':
+        insert_building()
+    elif choice == '2':
+        insert_apartment()
+    elif choice == '3':
+        exit_application()
+    else:
+        print("Invalid option please run the application again")
+        sys.exit(1)
+
+def exit_application():
+    print("\n Exiting the application")
+    sys.exit(1)
+
+if __name__ =='__main__':
+    menu()
