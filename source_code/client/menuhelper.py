@@ -413,7 +413,8 @@ def staff_menu():
             print('\n{0}'.format(ke))
             continue
         menu_selection = False
-
+if __name__ == '__main__':
+    GenReport()
 
 
 

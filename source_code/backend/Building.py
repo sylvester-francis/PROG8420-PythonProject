@@ -82,3 +82,37 @@ def delete_buildingInfo(query):
         print("\n Error deleting the rent info due to exception {} ".format(e))
         return None
 
+
+'''Aggregating the apartments collection
+Purpose: The below function is used to aggregate building data with apartment data
+Params : None
+Return value : Boolean
+'''
+
+def agg_apartments():
+    try:
+        result = c_name.aggregate([
+            {
+                '$lookup': {
+                    'from': 'apartments', 
+                    'localField': '_id', 
+                    'foreignField': 'buildingId', 
+                    'as': 'apartments'
+                }
+            }, {
+                '$unwind': {
+                    'path': '$apartments'
+                }
+            }, {
+                '$project': {
+                    'buildingName': 1, 
+                    'province': 1, 
+                    'apartments.isFurnished': 1
+                }
+            }
+        ])
+        return result
+    except Exception as e:
+        print("\n Error in aggregation due to exception {} ".format(e))
+        return None
+    
