@@ -90,6 +90,8 @@ Return value : Boolean
 '''
 
 def agg_apartments():
+    report_data = []
+    agg_data = {}
     try:
         result = c_name.aggregate([
             {
@@ -105,13 +107,20 @@ def agg_apartments():
                 }
             }, {
                 '$project': {
+                    '_id': 0, 
                     'buildingName': 1, 
+                    'Address':1,
+                    'City':1,
                     'province': 1, 
-                    'apartments.isFurnished': 1
+                    'apartments.isAvailable': 1
                 }
             }
         ])
-        return result
+        for data in result:
+            agg_data.update({'buildingName':data['buildingName'],'province':data['province'],'isAvailable':data['apartments']['isAvailable'],'City':data['City'],'Address':data['Address']})
+            report_data.append(agg_data)
+            agg_data = {}
+        return report_data
     except Exception as e:
         print("\n Error in aggregation due to exception {} ".format(e))
         return None

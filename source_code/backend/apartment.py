@@ -86,3 +86,41 @@ def delete_apartmentInfo(query):
         print("\n Error deleting the Apartment info due to exception {} ".format(e))
         return None
 
+def agg_users():
+    report_data = []
+    agg_data = {}
+    try:
+        result = c_name.aggregate([
+        {
+            '$lookup': {
+                'from': 'users', 
+                'localField': 'userId', 
+                'foreignField': '_id', 
+                'as': 'user'
+            }
+        }, {
+            '$unwind': {
+                'path': '$user'
+            }
+        }, {
+            '$project': {
+                '_id': 0, 
+                'unitType': 1, 
+                'noOfWashrooms': 1, 
+                'hasEnsuiteLaundry': 1, 
+                'hasEnsuiteWashroom': 1, 
+                'rentalPrice':1,
+                'user.FirstName': 1, 
+                'user.LastName': 1, 
+                'user.userType': 1
+            }
+        }
+        ])
+        for data in result:
+            agg_data.update({'FirstName':data['user']['FirstName'],'LastName':data['user']['LastName'],'unitType':data['unitType'],'noOfWashrooms':data['noOfWashrooms'],'hasEnsuiteLaundry':data['hasEnsuiteLaundry'],'hasEnsuiteWashroom':data['hasEnsuiteWashroom'],'userType':data['user']['userType'],'rentPrice':data['rentalPrice']})
+            report_data.append(agg_data)
+            agg_data = {}
+        return report_data
+    except Exception as e:
+        print("\n Error in aggregation due to exception {} ".format(e))
+        return None

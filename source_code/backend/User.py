@@ -104,3 +104,5 @@ def delete_user(query):
         print("\n Error deleting the user due to exception {} ".format(e))
         return None
 
+
+    
