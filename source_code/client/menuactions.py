@@ -123,16 +123,22 @@ def BuildingInfo():
 def GenReport():
     building_data = building.agg_apartments()
     apartment_data = apartment.agg_users()
+    rental_data = building.agg_rental_info()
     building_table = PrettyTable()
     apartment_table = PrettyTable()
+    rental_table = PrettyTable()
     for d in building_data:
         building_table.field_names = d.keys()
         building_table.add_row(d.values())
     for a in apartment_data:
         apartment_table.field_names = a.keys()
         apartment_table.add_row(a.values())
+    for r in rental_data:
+        rental_table.field_names = r.keys()
+        rental_table.add_row(r.values())
     print(building_table)
     print(apartment_table)
+    print(rental_table)
 
 
 # Display the staff in that Building
@@ -227,8 +233,7 @@ def check_service():
         current_Building['buildingName'],current_Building['Address'],current_Building['City']))
     print("\n ********************************************************************************** \n")
 
-#TODO : For Rachel  
-#error when invoking the method
+
 def display_apartment(data):
     print("\n DisplayApartmentInfomation called")
     q = {}

@@ -125,3 +125,36 @@ def agg_apartments():
         print("\n Error in aggregation due to exception {} ".format(e))
         return None
     
+def agg_rental_info():
+    report_data = []
+    agg_data = {}
+    try:
+        result = c_name.aggregate([
+            {
+                '$lookup': {
+                    'from': 'apartments', 
+                    'localField': '_id', 
+                    'foreignField': 'buildingId', 
+                    'as': 'apartments'
+                }
+            }, {
+                '$unwind': {
+                    'path': '$apartments'
+                }
+            }, {
+                '$project': {
+                    '_id': 0, 
+                    'buildingName': 1, 
+                    'City':1,
+                    'apartments.rentalPrice':1
+                }
+            }
+        ])
+        for data in result:
+            agg_data.update({'buildingName':data['buildingName'],'City':data['City'],'rentalPrice':data['apartments']['rentalPrice']})
+            report_data.append(agg_data)
+            agg_data = {}
+        return report_data
+    except Exception as e:
+        print("\n Error in aggregation due to exception {} ".format(e))
+        return None
