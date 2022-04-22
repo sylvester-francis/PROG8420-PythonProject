@@ -18,8 +18,8 @@ import backend.sublet as sublet
 import backend.service as service
 from bson.objectid import ObjectId
 from prettytable import PrettyTable
-from menu import *
 import os
+from menuhelper import navigation_back
 
 
 
@@ -27,14 +27,6 @@ if not os.path.exists("images"):
     os.mkdir("images")
 if not os.path.exists("reports"):
     os.mkdir("reports")
-
-def navigation_back():
-    choice = input('\n Do you wish to return to the main menu?(Y/N)')
-    if choice == 'Y' or choice =='y' or choice == 'yes' or choice == 'Yes':
-        menu()
-    elif choice =='N' or choice =='n' or choice == 'no' or choice == 'No':
-        print("\n Exiting from the application \n")
-        sys.exit(1)
 
 
 '''Tenant Actions'''
