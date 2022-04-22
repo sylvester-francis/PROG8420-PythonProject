@@ -25,6 +25,8 @@ import os
 
 if not os.path.exists("images"):
     os.mkdir("images")
+if not os.path.exists("reports"):
+    os.mkdir("reports")
 
 def navigation_back():
     choice = input('\n Do you wish to return to the main menu?(Y/N)')
@@ -169,7 +171,7 @@ def Building_report():
     for d in building_data:
         building_table.field_names = d.keys()
         building_table.add_row(d.values())
-    buildingdata_df.to_csv('./building.csv')
+    buildingdata_df.to_csv('reports/building.csv')
     fig1 = px.histogram(buildingdata_df, x = "province", color = "isAvailable")
     fig1.write_image("images/buildingGraph1.jpeg")
     fig2 = px.histogram(buildingdata_df, x = "City", color = "isFurnished")
@@ -183,7 +185,7 @@ def apartment_report():
     for a in apartment_data:
         apartment_table.field_names = a.keys()
         apartment_table.add_row(a.values())
-    apartmentdata_df.to_csv('./apartment.csv')
+    apartmentdata_df.to_csv('reports/apartment.csv')
     apartmentdata_df['Rent'] = apartmentdata_df['rentPrice'].str.replace("[$]", '').astype(int)
     apartmentdata_df['noOfWashrooms'] = apartmentdata_df['noOfWashrooms'].astype(str)
     fig1 = px.bar(apartmentdata_df, y = "Rent", x = "unitType", color = "Rent",color_continuous_scale=px.colors.sequential.Viridis, title = "Rent based on Unit Type",labels = {"unitType":"Unit Type"} )
@@ -197,16 +199,12 @@ def rental_report():
     for r in rental_data:
         rental_table.field_names = r.keys()
         rental_table.add_row(r.values())
-    rentaldata_df.to_csv('./rental.csv')
+    rentaldata_df.to_csv('reports/rental.csv')
     rentaldata_df['Rent'] = rentaldata_df['rentalPrice'].str.replace("[$]", '').astype(int)
     fig1 = px.bar(rentaldata_df, x = "City", y = "Rent",color="City", title = "Rent across City" )
     fig1.write_image("images/rentalGraph1.jpeg")
     print(rental_table)
     
-
-
-
-
 
 
 # Display the staff in that Building
