@@ -1,0 +1,5 @@
+,buildingName,province,isAvailable,City,Address,isFurnished
+0,Marq,BC,False,Cache Creek,157 Esch Circle,True
+1,Marq,BC,False,Cache Creek,157 Esch Circle,False
+2,RezOne,SK,True,Hudson Bay,88434 Gateway Lane,True
+3,RezOne,SK,True,Hudson Bay,88434 Gateway Lane,False

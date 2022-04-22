@@ -112,12 +112,13 @@ def agg_apartments():
                     'Address':1,
                     'City':1,
                     'province': 1, 
-                    'apartments.isAvailable': 1
+                    'apartments.isAvailable': 1,
+                    'apartments.isFurnished':1
                 }
             }
         ])
         for data in result:
-            agg_data.update({'buildingName':data['buildingName'],'province':data['province'],'isAvailable':data['apartments']['isAvailable'],'City':data['City'],'Address':data['Address']})
+            agg_data.update({'buildingName':data['buildingName'],'province':data['province'],'isAvailable':data['apartments']['isAvailable'],'City':data['City'],'Address':data['Address'],'isFurnished':data['apartments']['isFurnished']})
             report_data.append(agg_data)
             agg_data = {}
         return report_data

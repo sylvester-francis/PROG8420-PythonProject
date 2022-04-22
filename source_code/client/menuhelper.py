@@ -278,10 +278,6 @@ def owner_path(data,typeAction):
         else:
             print("\n Error in signing up Owner, please try again")
             return signedup
-        
-                
-
-        
     elif typeAction =='login':
         owner_menu(data)
 
@@ -413,7 +409,9 @@ def staff_menu():
             print('\n{0}'.format(ke))
             continue
         menu_selection = False
+
 if __name__ == '__main__':
+    #navigation_back()
     GenReport()
 
 

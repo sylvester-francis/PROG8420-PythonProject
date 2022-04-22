@@ -1,0 +1,5 @@
+,FirstName,LastName,unitType,noOfWashrooms,hasEnsuiteLaundry,hasEnsuiteWashroom,userType,rentPrice
+0,Missy,Cardwell,ThreeRooms,4,True,True,Tenant,$ 500
+1,Missy,Cardwell,SingleRoom,3,True,True,Tenant,$ 599
+2,Bret,Kelle,FiveRooms,1,True,False,Tenant,$ 799
+3,Gilberto,Djuricic,TwoRooms,4,True,False,Tenant,$ 600
