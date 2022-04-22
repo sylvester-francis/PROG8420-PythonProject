@@ -6,6 +6,9 @@ Last Modified date : 20 April 2022
 Last Modified by  : Sylvester Francis
 """
 import sys 
+import seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.express as px
 import pandas as pd
 import backend.User as user
 import backend.apartment as apartment
@@ -16,7 +19,12 @@ import backend.service as service
 from bson.objectid import ObjectId
 from prettytable import PrettyTable
 from menu import *
+import os
 
+
+
+if not os.path.exists("images"):
+    os.mkdir("images")
 
 def navigation_back():
     choice = input('\n Do you wish to return to the main menu?(Y/N)')
@@ -36,6 +44,7 @@ def viewProfile(data):
     print("\n ******************************User Details***************************************** \n")
     print("\n First Name : {0} \n Last Name: {1} \n Email: {2} \n User name: {3} \n Phone Number: {4} ".format(current_User['FirstName'],current_User['LastName'],current_User['email'],current_User['username'],current_User['phoneNumber']))
     print("\n ********************************************************************************** \n")
+
 def viewapartment(data):
     q = {}
     q['username'] = data['username']
@@ -161,6 +170,10 @@ def Building_report():
         building_table.field_names = d.keys()
         building_table.add_row(d.values())
     buildingdata_df.to_csv('./building.csv')
+    fig1 = px.histogram(buildingdata_df, x = "province", color = "isAvailable")
+    fig1.write_image("images/buildingGraph1.jpeg")
+    fig2 = px.histogram(buildingdata_df, x = "City", color = "isFurnished")
+    fig2.write_image("images/buildingGraph2.jpeg")
     print(building_table)
 
 def apartment_report():
@@ -171,6 +184,10 @@ def apartment_report():
         apartment_table.field_names = a.keys()
         apartment_table.add_row(a.values())
     apartmentdata_df.to_csv('./apartment.csv')
+    apartmentdata_df['Rent'] = apartmentdata_df['rentPrice'].str.replace("[$]", '').astype(int)
+    apartmentdata_df['noOfWashrooms'] = apartmentdata_df['noOfWashrooms'].astype(str)
+    fig1 = px.bar(apartmentdata_df, y = "Rent", x = "unitType", color = "Rent",color_continuous_scale=px.colors.sequential.Viridis, title = "Rent based on Unit Type",labels = {"unitType":"Unit Type"} )
+    fig1.write_image("images/apartmentGraph1.jpeg")
     print(apartment_table)
 
 def rental_report():
@@ -181,6 +198,9 @@ def rental_report():
         rental_table.field_names = r.keys()
         rental_table.add_row(r.values())
     rentaldata_df.to_csv('./rental.csv')
+    rentaldata_df['Rent'] = rentaldata_df['rentalPrice'].str.replace("[$]", '').astype(int)
+    fig1 = px.bar(rentaldata_df, x = "City", y = "Rent",color="City", title = "Rent across City" )
+    fig1.write_image("images/rentalGraph1.jpeg")
     print(rental_table)
     
 
